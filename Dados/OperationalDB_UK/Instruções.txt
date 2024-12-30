@@ -1,0 +1,7 @@
+1. Copiar os 2 ficheiros para a pasta "Data" do SQL Server (normalmente localizados em: C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA)
+2. Efectuar o Attach da BD "OperationalDB_UK" 
+	
+	a. Executar o Microsoft SQL Server Management Studio.  
+	b. Clicar com o botão direito do rato sobre Databases e seleccionar a opção Attach.
+	c. Adicionar a BD "OperationalDB_UK" através do botão de comando Add.
+	
