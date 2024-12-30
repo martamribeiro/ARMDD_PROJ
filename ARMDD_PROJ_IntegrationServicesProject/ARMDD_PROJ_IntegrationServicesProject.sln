@@ -3,20 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "ARMDD_PROJ_IntegrationServicesProject", "ARMDD_PROJ_IntegrationServicesProject.dtproj", "{6493B3B6-8789-4890-82F6-F4A5F5D235FB}"
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "ARMDD_PROJ_IntegrationServicesProject", "ARMDD_PROJ_IntegrationServicesProject\ARMDD_PROJ_IntegrationServicesProject.dtproj", "{845619B5-D08C-41F8-9012-B68F36B5D55D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6493B3B6-8789-4890-82F6-F4A5F5D235FB}.Development|Default.ActiveCfg = Development
-		{6493B3B6-8789-4890-82F6-F4A5F5D235FB}.Development|Default.Build.0 = Development
+		{845619B5-D08C-41F8-9012-B68F36B5D55D}.Development|Default.ActiveCfg = Development
+		{845619B5-D08C-41F8-9012-B68F36B5D55D}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E34C9431-AE52-4664-BDB2-4949FE3B6E93}
+		SolutionGuid = {5B837308-D3D5-454D-BFA9-AE7670329EF7}
 	EndGlobalSection
 EndGlobal
