@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{AD22E99D-71D8-4935-9026-81052B445C4D}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{6860287D-FC36-4BE6-9F26-A7550203E5D2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,16 +38,6 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=(local);Initial Catalog=master;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{74594122-2EB4-435B-BCD8-7B000F89C48A}(local).master;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[(local).master1]"
-      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{0985236D-6BD9-462D-9B7D-B524A0F2EBCA}"
-      DTS:ObjectName="(local).master1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=(local);Initial Catalog=master;Integrated Security=True;Application Name=SSIS-Package-{0985236D-6BD9-462D-9B7D-B524A0F2EBCA}(local).master1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -89,7 +79,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{29EE0662-A893-44C0-A26A-773ED3A6A4FD}"
-          SQLTask:SqlStatementSource="EXEC('CREATE DATABASE OperationalDB_UK   &#xA;    ON (FILENAME = ''' + @PPath + '\OperationalDB_UK.mdf''),  &#xA;    (FILENAME = ''' + @PPath + '\OperationalDB_UK.ldf'')  &#xA;    FOR ATTACH;')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="EXEC('IF NOT EXISTS(SELECT name FROM sys.databases WHERE name = ''OperationalDB_UK'')&#xA;CREATE DATABASE OperationalDB_UK   &#xA;    ON (FILENAME = ''' + @PPath + '\OperationalDB_UK.mdf''),  &#xA;    (FILENAME = ''' + @PPath + '\OperationalDB_UK.ldf'')  &#xA;    FOR ATTACH;')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@PPath"
             SQLTask:DtsVariableName="$Project::UKDBPath"
@@ -165,15 +155,15 @@
         <NodeLayout
           Size="220,42.4"
           Id="Package\Create Staging Area Database"
-          TopLeft="92.142857339005,63.4705881796598" />
+          TopLeft="195.000000415104,68.0588234697556" />
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\Create Data Mart Database"
-          TopLeft="399.742857743465,64.999999943025" />
+          TopLeft="494.600000734415,66.5294117063903" />
         <NodeLayout
           Size="172,41.6"
           Id="Package\Attach UK Database"
-          TopLeft="115.714285960611,191.941176302344" />
+          TopLeft="225.714286194772,186.588235130566" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
