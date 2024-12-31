@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/30/2024 12:52:16 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{E379E2A3-AAE3-4E3D-9E98-DA04D9E6547E}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{1D098E9D-ADEB-4C00-8C25-E485AEE49AE7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,18 +38,6 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=(local);Initial Catalog=master;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{74594122-2EB4-435B-BCD8-7B000F89C48A}(local).master;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[(local).OperationalDB_UK]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{9D62650A-ECF8-42B5-890D-262D059D9903}"
-      DTS:ObjectName="(local).OperationalDB_UK">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=(local);Initial Catalog=OperationalDB_UK;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{9D62650A-ECF8-42B5-890D-262D059D9903}(local).OperationalDB_UK;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
