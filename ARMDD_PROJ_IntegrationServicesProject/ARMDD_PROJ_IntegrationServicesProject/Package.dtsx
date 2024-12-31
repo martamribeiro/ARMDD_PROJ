@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{6A4C4B72-6AA5-4CF9-AFE0-187ADED53987}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{AD22E99D-71D8-4935-9026-81052B445C4D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -76,6 +76,30 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
+      DTS:refId="Package\Attach UK Database"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6F0AEE54-327A-4FA7-B736-089A632E6C78}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Attach UK Database"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{29EE0662-A893-44C0-A26A-773ED3A6A4FD}"
+          SQLTask:SqlStatementSource="EXEC('CREATE DATABASE OperationalDB_UK   &#xA;    ON (FILENAME = ''' + @PPath + '\OperationalDB_UK.mdf''),  &#xA;    (FILENAME = ''' + @PPath + '\OperationalDB_UK.ldf'')  &#xA;    FOR ATTACH;')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@PPath"
+            SQLTask:DtsVariableName="$Project::UKDBPath"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Create Data Mart Database"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -109,7 +133,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Create Staging Area Database"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -139,13 +163,17 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="220,41.6"
+          Size="220,42.4"
           Id="Package\Create Staging Area Database"
-          TopLeft="92.142857339005,64.2352940613424" />
+          TopLeft="92.142857339005,63.4705881796598" />
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\Create Data Mart Database"
-          TopLeft="449.285715242126,66.5294117063903" />
+          TopLeft="399.742857743465,64.999999943025" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Attach UK Database"
+          TopLeft="115.714285960611,191.941176302344" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
