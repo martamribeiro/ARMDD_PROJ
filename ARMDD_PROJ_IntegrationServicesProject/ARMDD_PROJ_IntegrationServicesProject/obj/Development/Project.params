@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <SSIS:Parameters xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
   <SSIS:Parameter
-    SSIS:Name="UK_DB_Folder">
+    SSIS:Name="PackagePath">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{1ad3b45a-50ab-430d-aa34-da4b0a99f35b}</SSIS:Property>
+        SSIS:Name="ID">{a663dee1-4e59-4bb2-94a4-0c44c75dfe7d}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -12,20 +12,20 @@
       <SSIS:Property
         SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
+        SSIS:Name="Required">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">C:\Users\marta\Documents\GitHub\ARMDD_PROJ\Data\OperationalDB_UK</SSIS:Property>
+        SSIS:Name="Value">C:\Users\marta\Documents\GitHub\ARMDD_PROJ\ARMDD_PROJ_IntegrationServicesProject</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="USA_CSV_Folder">
+    SSIS:Name="ServerName">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{11682b63-88db-4f46-8c46-9371cd8d449f}</SSIS:Property>
+        SSIS:Name="ID">{ad16a6e0-2397-44d6-93ea-27181bc6d936}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -33,11 +33,53 @@
       <SSIS:Property
         SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
+        SSIS:Name="Required">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">C:\Users\marta\Documents\GitHub\ARMDD_PROJ\Data\OperationalDB_USA</SSIS:Property>
+        SSIS:Name="Value">(local)</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="StagingAreaDBName">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{798ab9a5-8a78-43c8-8c63-7b387dafdcad}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">1</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">ARMDD_PROJ_StagingArea</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="DataMartDBName">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{f4c1d905-f8d2-4b1a-9105-395b46a7cb60}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">1</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">ARMDD_PROJ_DataMart</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
