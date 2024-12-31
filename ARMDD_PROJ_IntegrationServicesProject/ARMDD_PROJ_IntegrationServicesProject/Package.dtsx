@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{F94E5D45-B54A-4F2F-9930-779A42859259}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{6A4C4B72-6AA5-4CF9-AFE0-187ADED53987}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -145,7 +145,7 @@
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\Create Data Mart Database"
-          TopLeft="449.285715242126,59.6470587712465" />
+          TopLeft="449.285715242126,66.5294117063903" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
