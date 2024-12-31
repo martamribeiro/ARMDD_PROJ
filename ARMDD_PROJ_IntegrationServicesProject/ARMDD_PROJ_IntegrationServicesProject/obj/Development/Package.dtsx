@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{1D098E9D-ADEB-4C00-8C25-E485AEE49AE7}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{38DDB79A-ADD4-47BE-9D85-F3B2AB1A2929}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40,9 +40,51 @@
           DTS:ConnectionString="Data Source=(local);Initial Catalog=master;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{74594122-2EB4-435B-BCD8-7B000F89C48A}(local).master;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).OperationalDB_UK]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9D62650A-ECF8-42B5-890D-262D059D9903}"
+      DTS:ObjectName="(local).OperationalDB_UK">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=OperationalDB_UK;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{9D62650A-ECF8-42B5-890D-262D059D9903}(local).OperationalDB_UK;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Add Tables from OperationalDB_UK"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A25CC348-3D92-4C63-90A7-A31724B09F58}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Add Tables from OperationalDB_UK"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{74594122-2EB4-435B-BCD8-7B000F89C48A}"
+          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'OperationalDB_UK')&#xA;BEGIN&#xA;    CREATE DATABASE OperationalDB_UK ON &#xA;    (FILENAME = @P1 + '\OperationalDB_UK.mdf'), &#xA;    (FILENAME = @P2 + '\OperationalDB_UK.ldf') &#xA;    FOR ATTACH;&#xA;END&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@P1"
+            SQLTask:DtsVariableName="$Project::UK_DB_Folder"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@P2"
+            SQLTask:DtsVariableName="$Project::UK_DB_Folder"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Create Staging Area Database"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -62,6 +104,16 @@
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{21A80B03-0B08-46BC-B52C-38D3E0CA7CEB}"
+      DTS:From="Package\Create Staging Area Database"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Add Tables from OperationalDB_UK" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -73,11 +125,37 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="220,41.6"
           Id="Package\Create Staging Area Database"
           TopLeft="92.142857339005,64.2352940613424" />
+        <NodeLayout
+          Size="246.4,41.6"
+          Id="Package\Add Tables from OperationalDB_UK"
+          TopLeft="75.7142858754617,170.52941161523" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="200.528571607233,105.835294061342">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.6941175538878"
+              Start="0,0"
+              End="0,57.1941175538878">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.1941175538878" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>

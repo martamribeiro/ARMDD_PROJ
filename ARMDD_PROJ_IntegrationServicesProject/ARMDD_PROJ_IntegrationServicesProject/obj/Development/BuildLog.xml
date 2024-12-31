@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>ARMDD_PROJ_IntegrationServicesProject</Name>
-    <LastWriteTime>2024-12-31T14:30:41.8285289Z</LastWriteTime>
+    <LastWriteTime>2024-12-31T15:15:03.0533326Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Package.dtsx</Name>
-      <LastWriteTime>2024-12-31T14:33:46.6421824Z</LastWriteTime>
+      <LastWriteTime>2024-12-31T15:20:37.6047635Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
