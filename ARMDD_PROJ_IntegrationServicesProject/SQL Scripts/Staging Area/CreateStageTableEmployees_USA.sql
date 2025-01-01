@@ -12,7 +12,7 @@ IF NOT EXISTS (SELECT name FROM sys.tables WHERE name='Employees_USA')
 		[PostalCode] [varchar](50),
 		[HomePhone] [varchar](50),
 		[Extension] [int],
-		[Obs] [varchar](255),
+		[Obs] [varchar](max),
 		[ReportsTo] [int]
 	)
 ELSE
