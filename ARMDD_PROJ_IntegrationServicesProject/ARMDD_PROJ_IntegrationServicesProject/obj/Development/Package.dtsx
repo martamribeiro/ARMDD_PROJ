@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{6860287D-FC36-4BE6-9F26-A7550203E5D2}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{7264F029-63A9-4A9D-B8A8-423D0CAF5963}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,10 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{8760715A-7329-4DF2-9954-FA6231D4A925}"
       DTS:ObjectName="(local).ARMDD_PROJ_StagingArea">
+      <DTS:PropertyExpression
+        DTS:Name="InitialCatalog">@[$Project::StagingAreaDBName]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::ServerName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -33,6 +37,8 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{74594122-2EB4-435B-BCD8-7B000F89C48A}"
       DTS:ObjectName="(local).master">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::ServerName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -45,6 +51,8 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{9D62650A-ECF8-42B5-890D-262D059D9903}"
       DTS:ObjectName="(local).OperationalDB_UK">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::ServerName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -53,17 +61,41 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Create SA Tables]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{0D7FE570-ABA1-49D2-B9F0-81EFAEE6A4FD}"
+      DTS:ObjectName="Create SA Tables">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::SAScriptFileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.master]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
       DTS:DTSID="{29EE0662-A893-44C0-A26A-773ED3A6A4FD}"
       DTS:ObjectName="localhost.master">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::ServerName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=master;Integrated Security=True;Application Name=SSIS-Package-{29EE0662-A893-44C0-A26A-773ED3A6A4FD}localhost.master;" />
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=master;Integrated Security=True;Application Name=SSIS-Package-{29EE0662-A893-44C0-A26A-773ED3A6A4FD}localhost.master;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1680703F-CEFD-4ED5-B7C8-5DE102E50285}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SAScriptFileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Attach UK Database"
@@ -74,7 +106,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Attach UK Database"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -98,7 +130,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Create Data Mart Database"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -139,7 +171,82 @@
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach SA Create Table Script"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{34B44A14-6948-4D15-BFFB-4F6DE385CD41}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach SA Create Table Script">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{3A311171-DD48-4C7C-90AD-AB6694F5800E}"
+        DTS:ObjectName="{3A311171-DD48-4C7C-90AD-AB6694F5800E}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[$Project::PackagePath]+ "\\SQL Scripts\\Staging Area"</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\marta\Documents\GitHub\ARMDD_PROJ\ARMDD_PROJ_IntegrationServicesProject\SQL Scripts\Staging Area" />
+            <FEFEProperty
+              FileSpec="*.sql" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach SA Create Table Script\Execute SA Script"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6AED8557-F9A7-48CE-B426-F3191721CF6F}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SA Script"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{8760715A-7329-4DF2-9954-FA6231D4A925}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="Create SA Tables" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{C3BE904F-856F-4618-9E22-C9516B3F06C4}"
+          DTS:ObjectName="{C3BE904F-856F-4618-9E22-C9516B3F06C4}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::SAScriptFileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{120CD643-27DE-496A-AD24-8595BD482DB9}"
+      DTS:From="Package\Attach UK Database"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Create Staging Area Database" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{59D79DB1-9F42-44A0-827F-6A856344AF31}"
+      DTS:From="Package\Create Staging Area Database"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Foreach SA Create Table Script" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -151,19 +258,74 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="220,42.4"
-          Id="Package\Create Staging Area Database"
-          TopLeft="195.000000415104,68.0588234697556" />
-        <NodeLayout
-          Size="206.4,41.6"
-          Id="Package\Create Data Mart Database"
-          TopLeft="494.600000734415,66.5294117063903" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="172,41.6"
           Id="Package\Attach UK Database"
-          TopLeft="225.714286194772,186.588235130566" />
+          TopLeft="217.857143320903,68.8235293514384" />
+        <NodeLayout
+          Size="206.4,41.6"
+          Id="Package\Create Data Mart Database"
+          TopLeft="621.742858147926,70.3529411148035" />
+        <NodeLayout
+          Size="220,42.4"
+          Id="Package\Create Staging Area Database"
+          TopLeft="195.000000415104,173.588235141961" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="304.428571868004,110.423529351438">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.1647057905225"
+              Start="0,0"
+              End="0,55.6647057905225">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.6647057905225" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Foreach SA Create Table Script\Execute SA Script"
+          TopLeft="63.4571433634783,38.7764703522917" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="285.6,132.8"
+          Size="285.6,176"
+          Id="Package\Foreach SA Create Table Script"
+          TopLeft="162.857143203823,306.458823287435" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="305.328571809463,215.988235141961">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,90.4705881454745"
+              Start="0,0"
+              End="0,82.9705881454745">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.9705881454745" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
