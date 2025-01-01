@@ -11,11 +11,27 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{7264F029-63A9-4A9D-B8A8-423D0CAF5963}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{C75C8A46-BD48-406C-BD13-CF556A91D708}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).ARMDD_PROJ_DataMart]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D5362789-BAB0-49C7-8E78-1CAF26C52C25}"
+      DTS:ObjectName="(local).ARMDD_PROJ_DataMart">
+      <DTS:PropertyExpression
+        DTS:Name="InitialCatalog">@[$Project::DataMartDBName]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::ServerName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=ARMDD_PROJ_DataMart;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{D5362789-BAB0-49C7-8E78-1CAF26C52C25}(local).ARMDD_PROJ_DataMart;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[(local).ARMDD_PROJ_StagingArea]"
       DTS:CreationName="OLEDB"
@@ -61,6 +77,17 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Create DM Tables]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{7566D729-136F-4A58-9AFF-1629CF13155F}"
+      DTS:ObjectName="Create DM Tables">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::DMScriptFileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Create SA Tables]"
       DTS:CreationName="FILE"
       DTS:DTSID="{0D7FE570-ABA1-49D2-B9F0-81EFAEE6A4FD}"
@@ -85,6 +112,16 @@
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{29593E32-9F6B-429A-8B93-51FAAF9D995D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DMScriptFileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{1680703F-CEFD-4ED5-B7C8-5DE102E50285}"
@@ -172,6 +209,63 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Foreach DM Create Table Script"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{4ec0acd8-f451-4777-9fd1-5d49dd4da07f}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach DM Create Table Script">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{2f449a4f-ba6d-42e0-9993-882e196ca6a7}"
+        DTS:ObjectName="{3A311171-DD48-4C7C-90AD-AB6694F5800E}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[$Project::PackagePath]+ "\\SQL Scripts\\Data Mart"</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\marta\Documents\GitHub\ARMDD_PROJ\ARMDD_PROJ_IntegrationServicesProject\SQL Scripts\Data Mart" />
+            <FEFEProperty
+              FileSpec="*.sql" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach DM Create Table Script\Execute DM Script"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{409637a2-5433-47c1-8082-ea1889e386e8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute DM Script"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{D5362789-BAB0-49C7-8E78-1CAF26C52C25}"
+              SQLTask:SqlStmtSourceType="FileConnection"
+              SQLTask:SqlStatementSource="Create DM Tables" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{CD87E234-1915-4EB6-8C87-DB5E13151FE7}"
+          DTS:ObjectName="{CD87E234-1915-4EB6-8C87-DB5E13151FE7}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::DMScriptFileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Foreach SA Create Table Script"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
@@ -246,6 +340,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Foreach SA Create Table Script" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{396CD556-068C-4852-89B3-04C711AEB1B0}"
+      DTS:From="Package\Create Data Mart Database"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Foreach DM Create Table Script" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -258,7 +360,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="172,41.6"
           Id="Package\Attach UK Database"
@@ -266,7 +368,7 @@
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\Create Data Mart Database"
-          TopLeft="621.742858147926,70.3529411148035" />
+          TopLeft="625.314286726957,179.323529254581" />
         <NodeLayout
           Size="220,42.4"
           Id="Package\Create Staging Area Database"
@@ -318,6 +420,39 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,82.9705881454745" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Foreach DM Create Table Script\Execute DM Script"
+          TopLeft="63.4571433634783,38.7764703522917" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="285.6,132.8"
+          Size="285.6,176"
+          Id="Package\Foreach DM Create Table Script"
+          TopLeft="589.642858398052,307.311764670021" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="730.478572562505,220.923529254581">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86.3882354154407"
+              Start="0,0"
+              End="0,78.8882354154407">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.8882354154407" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
