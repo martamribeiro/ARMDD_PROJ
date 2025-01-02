@@ -11,11 +11,22 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{000684DD-BD10-4FAB-B1F0-401027E4C942}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{304E0A3A-FAE6-466C-BA12-8C684A175434}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local)]"
+      DTS:CreationName="SMOServer"
+      DTS:DTSID="{101C9DC5-2DE4-4CF0-914B-DC6221E7F42B}"
+      DTS:ObjectName="(local)">
+      <DTS:ObjectData>
+        <SMOServerConnectionManager
+          ConnectionString="SqlServerName=(local);UseWindowsAuthentication=True;UserName=;"
+          ConnectByProxy="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[(local).ARMDD_PROJ_DataMart]"
       DTS:CreationName="OLEDB"
@@ -150,6 +161,16 @@
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SAScriptFileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5A461ECB-80F9-4DBC-8E83-6A1ED6752419}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="UKTableName">
       <DTS:VariableValue
         DTS:DataType="8"
         xml:space="preserve"></DTS:VariableValue>
@@ -404,6 +425,53 @@
           DTS:VariableName="User::SAScriptFileName" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Rename UK Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{408FE671-6C8D-4BDC-9F3E-220E808C2475}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Rename UK Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Connection">@[$Project::ServerName]+"."+ @[$Project::StagingAreaDBName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8760715A-7329-4DF2-9954-FA6231D4A925}"
+          SQLTask:SqlStatementSource="EXEC sp_rename 'Categories', 'Categories_UK';&#xA;EXEC sp_rename 'Cities', 'Cities_UK';&#xA;EXEC sp_rename 'Customers', 'Customers_UK';&#xA;EXEC sp_rename 'Employees', 'Employees_UK';&#xA;EXEC sp_rename 'OrderDetails', 'OrderDetails_UK';&#xA;EXEC sp_rename 'Orders', 'Orders_UK';&#xA;EXEC sp_rename 'Products', 'Products_UK';&#xA;EXEC sp_rename 'QuantitiesPerUnit', 'QuantitiesPerUnit_UK';&#xA;EXEC sp_rename 'Regions', 'Regions_UK';&#xA;EXEC sp_rename 'Shippers', 'Shippers_UK';&#xA;EXEC sp_rename 'ShipTo', 'ShipTo_UK';&#xA;EXEC sp_rename 'Suppliers', 'Suppliers_UK';&#xA;EXEC sp_rename 'Titles', 'Titles_UK';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transfer UK Database tables to SA"
+      DTS:CreationName="Microsoft.TransferSqlServerObjectsTask"
+      DTS:Description="Transfer SQL Server Objects Task"
+      DTS:DTSID="{BDC1B5E2-8293-4BC5-A18A-589C53EF0FB6}"
+      DTS:ExecutableType="Microsoft.TransferSqlServerObjectsTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer UK Database tables to SA"
+      DTS:TaskContact="Transfer Objects Task; Microsoft Corporation; SQL Server 2022; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="DestinationConnection">@[$Project::ServerName]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="DestinationDatabase">@[$Project::StagingAreaDBName]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="SourceConnection">@[$Project::ServerName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <TransferSqlServerObjectsTaskData
+          SourceConnection="{101C9DC5-2DE4-4CF0-914B-DC6221E7F42B}"
+          DestinationConnection="{101C9DC5-2DE4-4CF0-914B-DC6221E7F42B}"
+          SourceDatabase="OperationalDB_UK"
+          DestinationDatabase="ARMDD_PROJ_StagingArea"
+          TablesList="13,18,[dbo].[Categories],14,[dbo].[Cities],17,[dbo].[Customers],17,[dbo].[Employees],20,[dbo].[OrderDetails],14,[dbo].[Orders],16,[dbo].[Products],25,[dbo].[QuantitiesPerUnit],15,[dbo].[Regions],16,[dbo].[Shippers],14,[dbo].[ShipTo],17,[dbo].[Suppliers],14,[dbo].[Titles],"
+          IncludeDependentObjects="True"
+          CopyData="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -438,6 +506,22 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Foreach CSV File (USA)" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{97F069ED-8B2D-4052-80E4-2EC09FFA5466}"
+      DTS:From="Package\Foreach CSV File (USA)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Transfer UK Database tables to SA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{78DF675E-F4E2-49ED-80A0-F7279B619D04}"
+      DTS:From="Package\Transfer UK Database tables to SA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Rename UK Tables" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -450,7 +534,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="172,41.6"
           Id="Package\Attach UK Database"
@@ -463,6 +547,39 @@
           Size="220,42.4"
           Id="Package\Create Staging Area Database"
           TopLeft="195.000000415104,173.588235141961" />
+        <NodeLayout
+          Size="194.4,41.6"
+          Id="Package\Foreach CSV File (USA)\Load CSV File Into Table"
+          TopLeft="44.5571432942944,51.3352937707698" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="283.2,143.2"
+          Size="283.2,186.4"
+          Id="Package\Foreach CSV File (USA)"
+          TopLeft="160.714286056404,567.470587826415" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Foreach DM Create Table Script\Execute DM Script"
+          TopLeft="63.4571433634783,38.7764703522917" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="285.6,132.8"
+          Size="285.6,176"
+          Id="Package\Foreach DM Create Table Script"
+          TopLeft="589.642858398052,307.311764670021" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Foreach SA Create Table Script\Execute SA Script"
+          TopLeft="63.4571433634783,38.7764703522917" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="285.6,132.8"
+          Size="285.6,176"
+          Id="Package\Foreach SA Create Table Script"
+          TopLeft="162.857143203823,306.458823287435" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="304.428571868004,110.423529351438">
@@ -485,17 +602,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Foreach SA Create Table Script\Execute SA Script"
-          TopLeft="63.4571433634783,38.7764703522917" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="285.6,132.8"
-          Size="285.6,176"
-          Id="Package\Foreach SA Create Table Script"
-          TopLeft="162.857143203823,306.458823287435" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="305.328571809463,215.988235141961">
@@ -518,17 +624,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Foreach DM Create Table Script\Execute DM Script"
-          TopLeft="63.4571433634783,38.7764703522917" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="285.6,132.8"
-          Size="285.6,176"
-          Id="Package\Foreach DM Create Table Script"
-          TopLeft="589.642858398052,307.311764670021" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="730.478572562505,220.923529254581">
@@ -551,17 +646,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="194.4,41.6"
-          Id="Package\Foreach CSV File (USA)\Load CSV File Into Table"
-          TopLeft="44.5571432942944,51.3352937707698" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="283.2,143.2"
-          Size="283.2,186.4"
-          Id="Package\Foreach CSV File (USA)"
-          TopLeft="160.714286056404,567.470587826415" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="303.985714630114,482.458823287435">
@@ -576,6 +660,58 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,77.5117645389792" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="240.8,41.6"
+          Id="Package\Transfer UK Database tables to SA"
+          TopLeft="184.28571467801,835.717646871141" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="303.500000367207,753.870587826415">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81.8470590447262"
+              Start="0,0"
+              End="0,74.3470590447262">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.3470590447262" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Rename UK Tables"
+          TopLeft="224.28571476316,940.376470261132" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="306.285714720585,877.317646871141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.0588233899907"
+              Start="0,0"
+              End="0,55.5588233899907">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5588233899907" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
