@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{6175D420-5790-4421-8D93-2459CC7A94EC}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{304E0A3A-FAE6-466C-BA12-8C684A175434}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -436,6 +436,8 @@
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Connection">@[$Project::ServerName]+"."+ @[$Project::StagingAreaDBName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{8760715A-7329-4DF2-9954-FA6231D4A925}"
@@ -453,6 +455,12 @@
       DTS:TaskContact="Transfer Objects Task; Microsoft Corporation; SQL Server 2022; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="DestinationConnection">@[$Project::ServerName]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="DestinationDatabase">@[$Project::StagingAreaDBName]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="SourceConnection">@[$Project::ServerName]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <TransferSqlServerObjectsTaskData
           SourceConnection="{101C9DC5-2DE4-4CF0-914B-DC6221E7F42B}"
