@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{304E0A3A-FAE6-466C-BA12-8C684A175434}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{7037836C-F86C-4A64-98CE-F4BE6C4ABEF1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -112,10 +112,10 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Load CSV Files]"
       DTS:CreationName="FILE"
-      DTS:DTSID="{EDD78D7E-1F6E-44E8-9666-2A44E098C7FE}"
+      DTS:DTSID="{F8DD731D-6529-4EFB-A56B-2B8FAF9E53D6}"
       DTS:ObjectName="Load CSV Files">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Project::PackagePath]+ "\\Files\\"+ @[User::CsvFileName]+".csv"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::PackagePath]+"\\Files\\"+ @[User::CsvFileName]+".csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="C:\Users\marta\Documents\GitHub\ARMDD_PROJ\ARMDD_PROJ_IntegrationServicesProject\Files\.csv" />
@@ -255,16 +255,16 @@
       DTS:refId="Package\Foreach CSV File (USA)"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{52269DD8-1F7D-4A85-AE81-5295A59F5252}"
+      DTS:DTSID="{B69A8F6C-3FC8-4219-8993-9D023C327933}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Foreach CSV File (USA)">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{7C192893-CA75-4576-8B27-9C833713FC2C}"
-        DTS:ObjectName="{7C192893-CA75-4576-8B27-9C833713FC2C}">
+        DTS:DTSID="{C6D85A00-EE70-4DD0-BDD9-76381B45CF84}"
+        DTS:ObjectName="{C6D85A00-EE70-4DD0-BDD9-76381B45CF84}">
         <DTS:PropertyExpression
-          DTS:Name="Directory">@[$Project::PackagePath] + "\\Files"</DTS:PropertyExpression>
+          DTS:Name="Directory">@[$Project::PackagePath]+"\\Files"</DTS:PropertyExpression>
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
@@ -285,18 +285,21 @@
           DTS:CreationName="Microsoft.BulkInsertTask"
           DTS:DelayValidation="True"
           DTS:Description="Bulk Insert Task"
-          DTS:DTSID="{D47EB6B9-C4A4-4B9E-A7FE-4BF160C4D527}"
+          DTS:DTSID="{CFCF7145-2B7D-4222-BEB0-500F69A5DB4F}"
           DTS:ExecutableType="Microsoft.BulkInsertTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load CSV File Into Table"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:PropertyExpression
-            DTS:Name="DestinationTableName">@[User::CsvFileName]</DTS:PropertyExpression>
+            DTS:Name="DestinationConnection">@[$Project::ServerName]+"."+ @[$Project::StagingAreaDBName]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="DestinationTableName">"["+@[User::CsvFileName]+"]"</DTS:PropertyExpression>
           <DTS:ObjectData>
             <BulkInsertTask:BulkInsertTaskData
-              BulkInsertTask:SourceConnectionName="{EDD78D7E-1F6E-44E8-9666-2A44E098C7FE}"
+              BulkInsertTask:SourceConnectionName="{F8DD731D-6529-4EFB-A56B-2B8FAF9E53D6}"
               BulkInsertTask:DestinationConnectionName="{8760715A-7329-4DF2-9954-FA6231D4A925}"
+              BulkInsertTask:DestinationTableName="[]"
               BulkInsertTask:FirstRow="2"
               BulkInsertTask:FieldTerminator="Semicolon {;}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
           </DTS:ObjectData>
@@ -305,8 +308,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{9BEC1F96-61F2-4872-B46A-6AABEADF97AC}"
-          DTS:ObjectName="{9BEC1F96-61F2-4872-B46A-6AABEADF97AC}"
+          DTS:DTSID="{C41330DF-D6AD-4C2F-A2BB-974238E10C8C}"
+          DTS:ObjectName="{C41330DF-D6AD-4C2F-A2BB-974238E10C8C}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::CsvFileName" />
       </DTS:ForEachVariableMappings>
@@ -501,7 +504,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{604F09AB-8752-4C2D-B63B-4EE2392DCD32}"
+      DTS:DTSID="{ABE57616-DE94-4231-9525-74BC2C1CB2A2}"
       DTS:From="Package\Foreach SA Create Table Script"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -509,7 +512,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{97F069ED-8B2D-4052-80E4-2EC09FFA5466}"
+      DTS:DTSID="{2A9CC9B0-AB37-4118-980C-4C8C3A306E09}"
       DTS:From="Package\Foreach CSV File (USA)"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -548,17 +551,6 @@
           Id="Package\Create Staging Area Database"
           TopLeft="195.000000415104,173.588235141961" />
         <NodeLayout
-          Size="194.4,41.6"
-          Id="Package\Foreach CSV File (USA)\Load CSV File Into Table"
-          TopLeft="44.5571432942944,51.3352937707698" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="283.2,143.2"
-          Size="283.2,186.4"
-          Id="Package\Foreach CSV File (USA)"
-          TopLeft="160.714286056404,567.470587826415" />
-        <NodeLayout
           Size="164,41.6"
           Id="Package\Foreach DM Create Table Script\Execute DM Script"
           TopLeft="63.4571433634783,38.7764703522917" />
@@ -580,6 +572,14 @@
           Size="285.6,176"
           Id="Package\Foreach SA Create Table Script"
           TopLeft="162.857143203823,306.458823287435" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Rename UK Tables"
+          TopLeft="224.28571476316,940.376470261132" />
+        <NodeLayout
+          Size="240.8,41.6"
+          Id="Package\Transfer UK Database tables to SA"
+          TopLeft="184.28571467801,835.717646871141" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="304.428571868004,110.423529351438">
@@ -647,58 +647,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="303.985714630114,482.458823287435">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,85.0117645389792"
-              Start="0,0"
-              End="0,77.5117645389792">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,77.5117645389792" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="240.8,41.6"
-          Id="Package\Transfer UK Database tables to SA"
-          TopLeft="184.28571467801,835.717646871141" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="303.500000367207,753.870587826415">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,81.8470590447262"
-              Start="0,0"
-              End="0,74.3470590447262">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,74.3470590447262" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Rename UK Tables"
-          TopLeft="224.28571476316,940.376470261132" />
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="306.285714720585,877.317646871141">
           <EdgeLayout.Curve>
@@ -712,6 +660,61 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,55.5588233899907" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="194.4,41.6"
+          Id="Package\Foreach CSV File (USA)\Load CSV File Into Table"
+          TopLeft="47.6000004470349,67.2588233330156" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="286.4,176.8"
+          Size="286.4,220"
+          Id="Package\Foreach CSV File (USA)"
+          TopLeft="162.142857488017,557.141176370714" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="305.50000034592,482.458823287435">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74.6823530832793"
+              Start="0,0"
+              End="0,67.1823530832793">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.1823530832793" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="305.014286083013,777.141176370714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.5764705004267"
+              Start="0,0"
+              End="0,51.0764705004267">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.0764705004267" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
