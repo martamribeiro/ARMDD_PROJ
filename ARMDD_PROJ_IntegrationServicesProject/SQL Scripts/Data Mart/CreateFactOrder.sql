@@ -12,10 +12,14 @@ BEGIN
         [shipToKey] INT NULL,
         [currencyKey] INT NOT NULL,
         [shipperKey] INT NULL,
+        [sourceKey] INT NULL,
         [unitPrice] DECIMAL(19, 4) NOT NULL,
+        [unitPriceUSD] DECIMAL(19, 4) NOT NULL,
         [quantity] SMALLINT NOT NULL,
-        [discount] FLOAT(10) NULL,
+        [discount] DECIMAL(19, 4) NULL,
+        [discountUSD] DECIMAL(19, 4) NULL,
         [freight] DECIMAL(19, 4) NULL,
+        [freightUSD] DECIMAL(19, 4) NULL,
         PRIMARY KEY (orderDate, productKey, customerKey, employeeKey)
     )
 

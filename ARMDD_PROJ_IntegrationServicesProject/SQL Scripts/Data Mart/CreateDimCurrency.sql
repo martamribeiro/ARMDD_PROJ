@@ -5,6 +5,7 @@ BEGIN
         [CurrencyKey] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
         [CurrencyCode] [int] NOT NULL,
         [CurrencyName] [varchar](20) NOT NULL,
+        [RateToUSD] DECIMAL(19, 4) NOT NULL,
         [symbol] [varchar](10) NOT NULL
     )
 
