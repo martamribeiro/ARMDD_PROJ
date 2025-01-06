@@ -4,16 +4,16 @@ BEGIN
     (
         [ShipToKey] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
         [ShipToID] [int] NOT NULL,
-        [ShipToName] [varchar](30) NULL,
-        [ShipToAddress] [varchar](30) NULL,
-        [ShipCity] [varchar](20) NULL,
-        [ShipRegionDescription] [char](50) NULL,
-		[ShipPostalCode] [varchar](10) NULL,
+        [ShipToName] [varchar](50) NULL,
+        [ShipToAddress] [varchar](50) NULL,
+        [ShipCity] [varchar](50) NULL,
+        [ShipRegionDescription] [varchar](50) NULL,
+		[ShipPostalCode] [varchar](50) NULL,
 		[ShipCountryCode] [char](2) NULL,
 		[ShipCountry] [varchar](50) NULL,
         [EffectiveDate] [datetime] NULL,
         [ExpirationDate] [datetime] NULL,
-        [IsCurrent] [bit] NULL
+        [IsCurrent] [varchar](3) NULL
     )
 
     CREATE NONCLUSTERED INDEX [NonClusteredIndex-DimShipTo] ON [dbo].[DimShipTo]
