@@ -16,8 +16,8 @@ BEGIN
         [City] [varchar](20) NULL,
         [RegionDescription] [char](50) NULL,
 		[ReportsToKey] [int] NULL,
-		[EffectiveDate] [date] NULL,
-        [ExpirationDate] [date] NULL,
+		[EffectiveDate] [datetime] NULL,
+        [ExpirationDate] [datetime] NULL,
         [IsCurrent] [bit] NULL
     )
 

@@ -14,8 +14,8 @@ BEGIN
         [supplierCountryCode] CHAR(2) NULL,
         [supplierPhone] VARCHAR(24) NULL,
         [supplierFax] VARCHAR(24) NULL,
-        [effectiveDate] DATE NULL,
-        [expirationDate] DATE NULL,
+        [effectiveDate] DATETIME NULL,
+        [expirationDate] DATETIME NULL,
         [isCurrent] BIT NULL
     )
 

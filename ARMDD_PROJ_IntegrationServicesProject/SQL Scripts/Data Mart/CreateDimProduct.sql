@@ -16,8 +16,8 @@ BEGIN
         [reorderLevel] SMALLINT NULL,
         [discontinued] BIT NULL,
         [supplierKey] INT NULL,
-        [effectiveDate] DATE NULL,
-        [expirationDate] DATE NULL,
+        [effectiveDate] DATETIME NULL,
+        [expirationDate] DATETIME NULL,
         [isCurrent] BIT NULL
     )
 

@@ -15,8 +15,8 @@ BEGIN
         [Fax] [varchar](24) NULL,
         [City] [varchar](20) NULL,
         [RegionDescription] [char](50) NULL,
-        [EffectiveDate] [date] NULL,
-        [ExpirationDate] [date] NULL,
+        [EffectiveDate] [datetime] NULL,
+        [ExpirationDate] [datetime] NULL,
         [IsCurrent] [bit] NULL
     )
 

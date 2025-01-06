@@ -6,8 +6,8 @@ IF NOT EXISTS (SELECT name FROM sys.tables WHERE name = 'DimShipper')
         [shipperID] INT NOT NULL, 
         [companyName] VARCHAR(40) NOT NULL, 
         [phone] VARCHAR(24) NULL, 
-        [effectiveDate] DATE NOT NULL, 
-        [expirationDate] DATE NULL, 
+        [effectiveDate] DATETIME NOT NULL, 
+        [expirationDate] DATETIME NULL, 
         [isCurrent] BIT NOT NULL 
     )
 

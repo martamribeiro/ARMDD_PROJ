@@ -11,8 +11,8 @@ BEGIN
 		[ShipPostalCode] [varchar](10) NULL,
 		[ShipCountryCode] [char](2) NULL,
 		[ShipCountry] [varchar](50) NULL,
-        [EffectiveDate] [date] NULL,
-        [ExpirationDate] [date] NULL,
+        [EffectiveDate] [datetime] NULL,
+        [ExpirationDate] [datetime] NULL,
         [IsCurrent] [bit] NULL
     )
 
