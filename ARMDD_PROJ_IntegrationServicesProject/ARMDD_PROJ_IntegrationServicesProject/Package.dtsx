@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{C82C1D4C-2F46-40AF-9E16-0BE52A8B7027}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{CFC2C79B-2908-40D0-B648-1DDFB51A9009}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3276,6 +3276,13 @@ where [refTable].[TitleID] = ?</property>
                     <input
                       refId="Package\Load Business Dimensions\Load DimEmployee\Convert BirthDate USA.Inputs[Data Conversion Input]"
                       name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Convert BirthDate USA.Inputs[Data Conversion Input].Columns[BirthDate]"
+                          cachedDataType="dbDate"
+                          cachedName="BirthDate"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output].Columns[BirthDate]" />
+                      </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -3285,6 +3292,28 @@ where [refTable].[TitleID] = ?</property>
                       exclusionGroup="1"
                       name="Data Conversion Output"
                       synchronousInputId="Package\Load Business Dimensions\Load DimEmployee\Convert BirthDate USA.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Convert BirthDate USA.Outputs[Data Conversion Output].Columns[BirthDate_Converted]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Convert BirthDate USA.Outputs[Data Conversion Output].Columns[BirthDate_Converted]"
+                          name="BirthDate_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output].Columns[BirthDate]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
@@ -3397,6 +3426,13 @@ where [refTable].[TitleID] = ?</property>
                     <input
                       refId="Package\Load Business Dimensions\Load DimEmployee\Convert HireDate USA.Inputs[Data Conversion Input]"
                       name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Convert HireDate USA.Inputs[Data Conversion Input].Columns[HireDate]"
+                          cachedDataType="dbDate"
+                          cachedName="HireDate"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output].Columns[HireDate]" />
+                      </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -3406,6 +3442,28 @@ where [refTable].[TitleID] = ?</property>
                       exclusionGroup="1"
                       name="Data Conversion Output"
                       synchronousInputId="Package\Load Business Dimensions\Load DimEmployee\Convert HireDate USA.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Convert HireDate USA.Outputs[Data Conversion Output].Columns[HireDate_Converted]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Convert HireDate USA.Outputs[Data Conversion Output].Columns[HireDate_Converted]"
+                          name="HireDate_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output].Columns[HireDate]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
@@ -4297,11 +4355,11 @@ where [refTable].[FullDate] = ?</property>
                       synchronousInputId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey UK.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey UK.Outputs[Lookup Match Output].Columns[DateKey]"
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey UK.Outputs[Lookup Match Output].Columns[BirthDateKey]"
                           dataType="i4"
                           errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey UK.Outputs[Lookup Match Output].Columns[DateKey]"
-                          name="DateKey"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey UK.Outputs[Lookup Match Output].Columns[BirthDateKey]"
+                          name="BirthDateKey"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -4359,13 +4417,14 @@ where [refTable].[FullDate] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDate]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDate]) [refTable]
+where [refTable].[FullDate] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the type of connection used to access the reference dataset."
@@ -4396,12 +4455,12 @@ where [refTable].[FullDate] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml"></property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Semester" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Trimester" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthName" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="YearWeek" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthWeek" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekDay" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekDayName" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Day" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearDay" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Weekend" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="LastDayOfMonth" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Season" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap"></property>
+                      name="ParameterMap">#{Package\Load Business Dimensions\Load DimEmployee\Convert BirthDate USA.Outputs[Data Conversion Output].Columns[BirthDate_Converted]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4414,6 +4473,8 @@ where [refTable].[FullDate] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey USA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[(local).ARMDD_PROJ_DataMart]"
+                      connectionManagerRefId="Package.ConnectionManagers[(local).ARMDD_PROJ_DataMart]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -4421,6 +4482,24 @@ where [refTable].[FullDate] = ?</property>
                     <input
                       refId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey USA.Inputs[Lookup Input]"
                       name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey USA.Inputs[Lookup Input].Columns[BirthDate_Converted]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="BirthDate_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Convert BirthDate USA.Outputs[Data Conversion Output].Columns[BirthDate_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">FullDate</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -4432,6 +4511,22 @@ where [refTable].[FullDate] = ?</property>
                       exclusionGroup="1"
                       name="Lookup Match Output"
                       synchronousInputId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey USA.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey USA.Outputs[Lookup Match Output].Columns[BirthDateKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey USA.Outputs[Lookup Match Output].Columns[BirthDateKey]"
+                          name="BirthDateKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">DateKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
@@ -4735,11 +4830,11 @@ where [refTable].[FullDate] = ?</property>
                       synchronousInputId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey UK.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey UK.Outputs[Lookup Match Output].Columns[DateKey]"
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey UK.Outputs[Lookup Match Output].Columns[HireDateKey]"
                           dataType="i4"
                           errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey UK.Outputs[Lookup Match Output].Columns[DateKey]"
-                          name="DateKey"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey UK.Outputs[Lookup Match Output].Columns[HireDateKey]"
+                          name="HireDateKey"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -4797,13 +4892,14 @@ where [refTable].[FullDate] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDate]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDate]) [refTable]
+where [refTable].[FullDate] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the type of connection used to access the reference dataset."
@@ -4834,12 +4930,12 @@ where [refTable].[FullDate] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml"></property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Semester" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Trimester" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthName" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="YearWeek" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthWeek" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekDay" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekDayName" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Day" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YearDay" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Weekend" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="LastDayOfMonth" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Season" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap"></property>
+                      name="ParameterMap">#{Package\Load Business Dimensions\Load DimEmployee\Convert HireDate USA.Outputs[Data Conversion Output].Columns[HireDate_Converted]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4852,6 +4948,8 @@ where [refTable].[FullDate] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[(local).ARMDD_PROJ_DataMart]"
+                      connectionManagerRefId="Package.ConnectionManagers[(local).ARMDD_PROJ_DataMart]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -4859,6 +4957,24 @@ where [refTable].[FullDate] = ?</property>
                     <input
                       refId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA.Inputs[Lookup Input]"
                       name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA.Inputs[Lookup Input].Columns[HireDate_Converted]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="HireDate_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Convert HireDate USA.Outputs[Data Conversion Output].Columns[HireDate_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">FullDate</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -4870,6 +4986,22 @@ where [refTable].[FullDate] = ?</property>
                       exclusionGroup="1"
                       name="Lookup Match Output"
                       synchronousInputId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA.Outputs[Lookup Match Output].Columns[HireDateKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA.Outputs[Lookup Match Output].Columns[HireDateKey]"
+                          name="HireDateKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">DateKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
@@ -5077,13 +5209,14 @@ where [refTable].[RegionID] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Regions_USA]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Regions_USA]) [refTable]
+where [refTable].[RegionID] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the type of connection used to access the reference dataset."
@@ -5114,12 +5247,12 @@ where [refTable].[RegionID] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml"></property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="RegionID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RegionDescription" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap"></property>
+                      name="ParameterMap">#{Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output].Columns[RegionID]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5132,6 +5265,8 @@ where [refTable].[RegionID] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[(local).ARMDD_PROJ_StagingArea]"
+                      connectionManagerRefId="Package.ConnectionManagers[(local).ARMDD_PROJ_StagingArea]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -5139,6 +5274,24 @@ where [refTable].[RegionID] = ?</property>
                     <input
                       refId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA.Inputs[Lookup Input]"
                       name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA.Inputs[Lookup Input].Columns[RegionID]"
+                          cachedDataType="i4"
+                          cachedName="RegionID"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output].Columns[RegionID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">RegionID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -5150,6 +5303,24 @@ where [refTable].[RegionID] = ?</property>
                       exclusionGroup="1"
                       name="Lookup Match Output"
                       synchronousInputId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA.Outputs[Lookup Match Output].Columns[RegionDescription]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Copy Column"
+                          length="50"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA.Outputs[Lookup Match Output].Columns[RegionDescription]"
+                          name="RegionDescription"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">RegionDescription</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
@@ -5568,6 +5739,112 @@ where [refTable].[TitleID] = ?</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Transform FullName and TitleOfCourtesy"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Inputs[Derived Column Input].Columns[Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Name"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output].Columns[Name]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Outputs[Derived Column Output].Columns[FullName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Outputs[Derived Column Output].Columns[FullName]"
+                          name="FullName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[RIGHT](#{Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output].Columns[Name]},[LEN](#{Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output].Columns[Name]}) - [FINDSTRING](#{Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output].Columns[Name]}," ",1))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">RIGHT(Name,LEN(Name) - FINDSTRING(Name," ",1))</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Outputs[Derived Column Output].Columns[TitleOfCourtesy]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Outputs[Derived Column Output].Columns[TitleOfCourtesy]"
+                          name="TitleOfCourtesy"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[LEFT](#{Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output].Columns[Name]},[FINDSTRING](#{Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output].Columns[Name]}," ",1) - 1)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">LEFT(Name,FINDSTRING(Name," ",1) - 1)</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName UK"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -5668,10 +5945,25 @@ where [refTable].[TitleID] = ?</property>
                   name="Data Conversion Output"
                   startId="Package\Load Business Dimensions\Load DimEmployee\Convert HireDate UK.Outputs[Data Conversion Output]" />
                 <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Data Conversion Output2]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Convert HireDate USA.Inputs[Data Conversion Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Convert BirthDate USA.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Data Conversion Output3]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey USA.Inputs[Lookup Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Convert HireDate USA.Outputs[Data Conversion Output]" />
+                <path
                   refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output]"
                   endId="Package\Load Business Dimensions\Load DimEmployee\Lookup Title.Inputs[Lookup Input]"
                   name="Derived Column Output"
                   startId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName UK.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output1]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output]"
                   endId="Package\Load Business Dimensions\Load DimEmployee\Lookup City.Inputs[Lookup Input]"
@@ -5693,10 +5985,35 @@ where [refTable].[TitleID] = ?</property>
                   name="Lookup Match Output"
                   startId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey UK.Outputs[Lookup Match Output]" />
                 <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output4]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Convert BirthDate USA.Inputs[Data Conversion Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output5]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey USA.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output6]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey UK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output7]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA.Outputs[Lookup Match Output]" />
+                <path
                   refId="Package\Load Business Dimensions\Load DimEmployee.Paths[OLE DB Source Output]"
                   endId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName UK.Inputs[Derived Column Input]"
                   name="OLE DB Source Output"
                   startId="Package\Load Business Dimensions\Load DimEmployee\Employees_UK.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[OLE DB Source Output1]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Employees_USA.Outputs[OLE DB Source Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -8439,7 +8756,7 @@ where [refTable].[TitleID] = ?</property>
     design-time-name="Package\Load Business Dimensions\Load DimEmployee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="148,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee\Employees_UK"
@@ -8447,7 +8764,7 @@ where [refTable].[TitleID] = ?</property>
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee\Employees_USA"
-          TopLeft="635.384605916647,68.4615374413821" />
+          TopLeft="702.307681842492,71.5384604724554" />
         <NodeLayout
           Size="190.4,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee\Transform FullName UK"
@@ -8511,7 +8828,7 @@ where [refTable].[TitleID] = ?</property>
         <NodeLayout
           Size="223.2,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA"
-          TopLeft="654.615374860855,464.769225118252" />
+          TopLeft="676.153836078368,277.846150980546" />
         <NodeLayout
           Size="193.6,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey UK"
@@ -8519,7 +8836,7 @@ where [refTable].[TitleID] = ?</property>
         <NodeLayout
           Size="200,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey USA"
-          TopLeft="673.846143805064,771.692300264652" />
+          TopLeft="684.61537441382,570.153841729347" />
         <NodeLayout
           Size="190.4,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey UK"
@@ -8527,7 +8844,7 @@ where [refTable].[TitleID] = ?</property>
         <NodeLayout
           Size="196.8,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA"
-          TopLeft="675.3846053206,866.615376167572" />
+          TopLeft="686.153835929357,665.076917632267" />
         <EdgeLayout
           Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output]"
           TopLeft="371.630764697378,317.753842038833">
@@ -8679,11 +8996,11 @@ where [refTable].[TitleID] = ?</property>
         <NodeLayout
           Size="184.8,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee\Convert BirthDate USA"
-          TopLeft="683.076912898284,578.769229691762" />
+          TopLeft="693.84614350704,377.230771156457" />
         <NodeLayout
           Size="181.6,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee\Convert HireDate USA"
-          TopLeft="683.846143656052,670.307689866194" />
+          TopLeft="694.615374264808,468.76923133089" />
         <NodeLayout
           Size="224.8,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee\Slowly Changing Dimension UK"
@@ -8691,7 +9008,195 @@ where [refTable].[TitleID] = ?</property>
         <NodeLayout
           Size="230.4,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee\Slowly Changing Dimension USA"
-          TopLeft="658.461528649697,963.692303199034" />
+          TopLeft="669.230759258453,762.153844663729" />
+        <NodeLayout
+          Size="270.4,41.6"
+          Id="Package\Load Business Dimensions\Load DimEmployee\Transform FullName and TitleOfCourtesy"
+          TopLeft="647.69229804094,179.230766560023" />
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[OLE DB Source Output1]"
+          TopLeft="780.999989941716,113.138460472455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.0923060875672"
+              Start="0,0"
+              End="0,58.5923060875672">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5923060875672" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output1]"
+          TopLeft="785.323067059654,220.830766560023">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.0153844205233"
+              Start="0,0"
+              End="0,49.5153844205233">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5153844205233" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output4]"
+          TopLeft="786.999989792704,319.446150980546">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.7846201759114"
+              Start="0,0"
+              End="0,50.2846201759114">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.2846201759114" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,19.3376225879557,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Data Conversion Output2]"
+          TopLeft="785.830758885924,418.830771156457">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.9384601744323"
+              Start="0,0"
+              End="0,42.4384601744323">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.4384601744323" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Data Conversion Output3]"
+          TopLeft="785.015374339314,510.36923133089">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.7846103984569"
+              Start="0,0"
+              End="0,52.2846103984569">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.2846103984569" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output5]"
+          TopLeft="784.584605171588,611.753841729347">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.3230759029201"
+              Start="0,0"
+              End="0,45.8230759029201">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.8230759029201" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,17.10685045146,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output6]"
+          TopLeft="366.876919156771,906.676917403019">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.4769230769232"
+              Start="0,0"
+              End="0,49.9769230769232">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.9769230769232" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,19.1837740384616,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output7]"
+          TopLeft="784.492297593905,706.676917632267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.4769270314624"
+              Start="0,0"
+              End="0,47.9769270314624">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.9769270314624" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,18.1837760157312,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -8791,6 +9296,29 @@ where [refTable].[TitleID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Regions_USA]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey UK">
     <Properties>
       <Property>
@@ -8814,7 +9342,53 @@ where [refTable].[TitleID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey USA">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey UK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
