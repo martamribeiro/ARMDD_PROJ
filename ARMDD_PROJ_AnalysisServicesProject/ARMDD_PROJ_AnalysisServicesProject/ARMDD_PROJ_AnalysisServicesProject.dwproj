@@ -6,10 +6,31 @@
     <Name>ARMDD_PROJ_AnalysisServicesProject.database</Name>
     <FullPath>ARMDD_PROJ_AnalysisServicesProject.database</FullPath>
   </Database>
+  <DataSources>
+    <ProjectItem>
+      <Name>ARMDD PROJ Data Mart.ds</Name>
+      <FullPath>ARMDD PROJ Data Mart.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>ARMDD PROJ Data Mart</Id>
+            <Name>ARMDD PROJ Data Mart</Name>
+            <Value xsi:type="xsd:string">Provider=SQLOLEDB.1;Data Source=(local);Integrated Security=SSPI;Initial Catalog=ARMDD_PROJ_DataMart</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>ARMDD PROJ Data Mart</Id>
+            <Name>ARMDD PROJ Data Mart</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>
