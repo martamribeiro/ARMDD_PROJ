@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="61"
-  DTS:VersionGUID="{1BF3EC00-D8E7-43F8-9C7C-0E6BB0FB45C4}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{5FECE9B4-69D5-4FBA-89E0-102B48D879DC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1177,41 +1177,101 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID"
+                  refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes"
                   componentClassID="Microsoft.DataConvert"
                   contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Data Conversion"
-                  name="Convert CustomerID"
+                  name="Convert Attributes"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Inputs[Data Conversion Input]"
+                      refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input]"
                       name="Data Conversion Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Inputs[Data Conversion Input].Columns[CustomerID]"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input].Columns[CustomerID]"
                           cachedDataType="i4"
                           cachedName="CustomerID"
                           lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[CustomerID]" />
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input].Columns[CompanyName]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="CompanyName"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[CompanyName]" />
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input].Columns[ContactName]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="ContactName"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[ContactName]" />
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input].Columns[Address]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="Address"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[Address]" />
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input].Columns[PostalCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="PostalCode"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[PostalCode]" />
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input].Columns[CountryCode]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="CountryCode"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[CountryCode]" />
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input].Columns[Phone]"
+                          cachedDataType="wstr"
+                          cachedLength="24"
+                          cachedName="Phone"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[Phone]" />
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input].Columns[Fax]"
+                          cachedDataType="wstr"
+                          cachedLength="24"
+                          cachedName="Fax"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[Fax]" />
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input].Columns[CityName]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CityName"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Lookup City.Outputs[Lookup Match Output].Columns[CityName]" />
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input].Columns[RegionDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="RegionDescription"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription UK.Outputs[Lookup Match Output].Columns[RegionDescription]" />
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input].Columns[Title]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="Title"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Lookup Title.Outputs[Lookup Match Output].Columns[Title]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Output]"
+                      refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output]"
                       exclusionGroup="1"
                       name="Data Conversion Output"
-                      synchronousInputId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Inputs[Data Conversion Input]">
+                      synchronousInputId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Output].Columns[CustomerID_Converted]"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CustomerID_Converted]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="5"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Output].Columns[CustomerID_Converted]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CustomerID_Converted]"
                           name="CustomerID_Converted"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1226,26 +1286,324 @@
                               name="FastParse">false</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CompanyName_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="40"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CompanyName_Converted]"
+                          name="CompanyName_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[CompanyName]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[ContactName_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="30"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[ContactName_Converted]"
+                          name="ContactName_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[ContactName]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Address_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="60"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Address_Converted]"
+                          name="Address_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[Address]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[PostalCode_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[PostalCode_Converted]"
+                          name="PostalCode_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[PostalCode]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CountryCode_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="2"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CountryCode_Converted]"
+                          name="CountryCode_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[CountryCode]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Phone_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="24"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Phone_Converted]"
+                          name="Phone_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[Phone]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Fax_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="24"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Fax_Converted]"
+                          name="Fax_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[Fax]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CityName_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CityName_Converted]"
+                          name="CityName_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Lookup City.Outputs[Lookup Match Output].Columns[CityName]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[RegionDescription_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[RegionDescription_Converted]"
+                          name="RegionDescription_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription UK.Outputs[Lookup Match Output].Columns[RegionDescription]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Title_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="30"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Title_Converted]"
+                          name="Title_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Lookup Title.Outputs[Lookup Match Output].Columns[Title]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Error Output]"
+                      refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Data Conversion Error Output"
-                      synchronousInputId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Inputs[Data Conversion Input]">
+                      synchronousInputId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Convert CountryCode"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Inputs[Data Conversion Input].Columns[CountryCode]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="CountryCode"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Lookup CountryCode.Outputs[Lookup Match Output].Columns[CountryCode]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Outputs[Data Conversion Output].Columns[CountryCode_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="2"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Outputs[Data Conversion Output].Columns[CountryCode_Converted]"
+                          name="CountryCode_Converted"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Lookup CountryCode.Outputs[Lookup Match Output].Columns[CountryCode]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2042,7 +2400,6 @@
                         <outputColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 1.Outputs[Derived Column Output].Columns[EffectiveDate]"
                           dataType="dbTimeStamp"
-                          description="EffectiveDate"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           lineageId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 1.Outputs[Derived Column Output].Columns[EffectiveDate]"
@@ -2060,6 +2417,29 @@
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
                               name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::ContainerStartTime])</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="3"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]"
+                          name="IsCurrent"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">"Yes"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"Yes"</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -2190,7 +2570,6 @@
                         <outputColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 3.Outputs[Derived Column Output].Columns[EffectiveDate]"
                           dataType="dbTimeStamp"
-                          description="EffectiveDate"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           lineageId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 3.Outputs[Derived Column Output].Columns[EffectiveDate]"
@@ -2208,6 +2587,29 @@
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
                               name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::ContainerStartTime])</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 3.Outputs[Derived Column Output].Columns[IsCurrent]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="3"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 3.Outputs[Derived Column Output].Columns[IsCurrent]"
+                          name="IsCurrent"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">"Yes"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"Yes"</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -2319,40 +2721,45 @@
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
                           lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CustomerID_Converted]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[CompanyName]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[CompanyName_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="40"
-                          cachedName="CompanyName"
+                          cachedName="CompanyName_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CompanyName]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CompanyName_Converted]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[ContactName]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[ContactName_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="30"
-                          cachedName="ContactName"
+                          cachedName="ContactName_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[ContactName]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[ContactName_Converted]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[Title]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[Title_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="30"
-                          cachedName="Title"
+                          cachedName="Title_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Title]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Title_Converted]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[Address]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[Address_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="60"
-                          cachedName="Address"
+                          cachedName="Address_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Address]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Address_Converted]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[PostalCode]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[PostalCode_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="10"
-                          cachedName="PostalCode"
+                          cachedName="PostalCode_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[PostalCode]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[PostalCode_Converted]" />
                         <inputColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[CountryName]"
                           cachedCodepage="1252"
@@ -2362,46 +2769,58 @@
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                           lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CountryName]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[CountryCode]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[CountryCode_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="2"
-                          cachedName="CountryCode"
+                          cachedName="CountryCode_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CountryCode]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CountryCode_Converted]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[Phone]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[Phone_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="24"
-                          cachedName="Phone"
+                          cachedName="Phone_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Phone]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Phone_Converted]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[Fax]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[Fax_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="24"
-                          cachedName="Fax"
+                          cachedName="Fax_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fax]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Fax]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Fax_Converted]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[CityName]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[CityName_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="20"
-                          cachedName="CityName"
+                          cachedName="CityName_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CityName]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CityName_Converted]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[RegionDescription]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[RegionDescription_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="50"
-                          cachedName="RegionDescription"
+                          cachedName="RegionDescription_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[RegionDescription]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[RegionDescription]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[RegionDescription_Converted]" />
                         <inputColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[EffectiveDate]"
                           cachedDataType="dbTimeStamp"
                           cachedName="EffectiveDate"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveDate]"
                           lineageId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 1.Outputs[Derived Column Output].Columns[EffectiveDate]" />
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].Columns[IsCurrent]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="IsCurrent"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 1.Outputs[Derived Column Output].Columns[IsCurrent]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2413,25 +2832,25 @@
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
                           codePage="1252"
                           dataType="str"
-                          length="5"
+                          length="10"
                           name="CustomerID" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
                           codePage="1252"
                           dataType="str"
-                          length="40"
+                          length="50"
                           name="CompanyName" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
+                          length="50"
                           name="FullName" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
+                          length="50"
                           name="Title" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
@@ -2443,7 +2862,7 @@
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
                           codePage="1252"
                           dataType="str"
-                          length="10"
+                          length="50"
                           name="PostalCode" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
@@ -2461,19 +2880,19 @@
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone]"
                           codePage="1252"
                           dataType="str"
-                          length="24"
+                          length="50"
                           name="Phone" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fax]"
                           codePage="1252"
                           dataType="str"
-                          length="24"
+                          length="50"
                           name="Fax" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="50"
                           name="City" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[RegionDescription]"
@@ -2650,12 +3069,13 @@
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                           lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Outputs[Union All Output 1].Columns[Country]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[CountryCode]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[CountryCode_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="2"
-                          cachedName="CountryCode"
+                          cachedName="CountryCode_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Outputs[Union All Output 1].Columns[CountryCode]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Outputs[Union All Output 1].Columns[CountryCode_Converted]" />
                         <inputColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Phone]"
                           cachedCodepage="1252"
@@ -2694,6 +3114,13 @@
                           cachedName="EffectiveDate"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveDate]"
                           lineageId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 3.Outputs[Derived Column Output].Columns[EffectiveDate]" />
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[IsCurrent]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="IsCurrent"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 3.Outputs[Derived Column Output].Columns[IsCurrent]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2705,25 +3132,25 @@
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
                           codePage="1252"
                           dataType="str"
-                          length="5"
+                          length="10"
                           name="CustomerID" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
                           codePage="1252"
                           dataType="str"
-                          length="40"
+                          length="50"
                           name="CompanyName" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[FullName]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
+                          length="50"
                           name="FullName" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
+                          length="50"
                           name="Title" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
@@ -2735,7 +3162,7 @@
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
                           codePage="1252"
                           dataType="str"
-                          length="10"
+                          length="50"
                           name="PostalCode" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
@@ -2753,19 +3180,19 @@
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Phone]"
                           codePage="1252"
                           dataType="str"
-                          length="24"
+                          length="50"
                           name="Phone" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Fax]"
                           codePage="1252"
                           dataType="str"
-                          length="24"
+                          length="50"
                           name="Fax" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="50"
                           name="City" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[RegionDescription]"
@@ -3790,7 +4217,7 @@ where [refTable].[TitleID] = ?</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimCustomer] SET [ExpirationDate] = ? WHERE [CustomerID] = ? AND [ExpirationDate] IS NULL</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimCustomer] SET [ExpirationDate] = ?, IsCurrent = 'No' WHERE [CustomerID] = ? AND [ExpirationDate] IS NULL</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3819,7 +4246,7 @@ where [refTable].[TitleID] = ?</property>
                           cachedLength="5"
                           cachedName="CustomerID_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Output].Columns[CustomerID_Converted]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CustomerID_Converted]" />
                         <inputColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command.Inputs[OLE DB Command Input].Columns[ExpirationDate]"
                           cachedDataType="dbTimeStamp"
@@ -3844,7 +4271,7 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           codePage="1252"
                           dataType="str"
-                          length="5"
+                          length="10"
                           name="Param_1">
                           <properties>
                             <property
@@ -3935,21 +4362,23 @@ where [refTable].[TitleID] = ?</property>
                           cachedLength="5"
                           cachedName="CustomerID_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Output].Columns[CustomerID_Converted]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CustomerID_Converted]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Fax]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Fax_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="24"
-                          cachedName="Fax"
+                          cachedName="Fax_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[Fax]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Fax_Converted]" />
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Phone]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Phone_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="24"
-                          cachedName="Phone"
+                          cachedName="Phone_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[Phone]" />
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Phone_Converted]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3957,7 +4386,7 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           codePage="1252"
                           dataType="str"
-                          length="24"
+                          length="50"
                           name="Param_0">
                           <properties>
                             <property
@@ -3970,7 +4399,7 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           codePage="1252"
                           dataType="str"
-                          length="24"
+                          length="50"
                           name="Param_1">
                           <properties>
                             <property
@@ -3983,7 +4412,7 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           codePage="1252"
                           dataType="str"
-                          length="5"
+                          length="10"
                           name="Param_2">
                           <properties>
                             <property
@@ -4045,7 +4474,7 @@ where [refTable].[TitleID] = ?</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimCustomer] SET [ExpirationDate] = ? WHERE [CustomerID] = ? AND [ExpirationDate] IS NULL</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimCustomer] SET [ExpirationDate] = ?, IsCurrent = 'No' WHERE [CustomerID] = ? AND [ExpirationDate] IS NULL</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4099,7 +4528,7 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           codePage="1252"
                           dataType="str"
-                          length="5"
+                          length="10"
                           name="Param_1">
                           <properties>
                             <property
@@ -4214,7 +4643,7 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 3.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           codePage="1252"
                           dataType="str"
-                          length="24"
+                          length="50"
                           name="Param_0">
                           <properties>
                             <property
@@ -4227,7 +4656,7 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 3.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           codePage="1252"
                           dataType="str"
-                          length="24"
+                          length="50"
                           name="Param_1">
                           <properties>
                             <property
@@ -4240,7 +4669,7 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 3.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           codePage="1252"
                           dataType="str"
-                          length="5"
+                          length="10"
                           name="Param_2">
                           <properties>
                             <property
@@ -4359,34 +4788,6 @@ where [refTable].[TitleID] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[CityName]"
-                          cachedDataType="wstr"
-                          cachedLength="20"
-                          cachedName="CityName"
-                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Lookup City.Outputs[Lookup Match Output].Columns[CityName]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">3</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[CompanyName]"
-                          cachedDataType="wstr"
-                          cachedLength="40"
-                          cachedName="CompanyName"
-                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[CompanyName]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[CompanyName]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">3</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[CountryName]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -4416,77 +4817,6 @@ where [refTable].[TitleID] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[CustomerID_Converted]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="5"
-                          cachedName="CustomerID_Converted"
-                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[CustomerID]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Output].Columns[CustomerID_Converted]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">1</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[Fax]"
-                          cachedDataType="wstr"
-                          cachedLength="24"
-                          cachedName="Fax"
-                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[Fax]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[Fax]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">2</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[ContactName]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
-                          cachedName="ContactName"
-                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[FullName]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[ContactName]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">3</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[Phone]"
-                          cachedDataType="wstr"
-                          cachedLength="24"
-                          cachedName="Phone"
-                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[Phone]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[Phone]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">2</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[PostalCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="PostalCode"
-                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[PostalCode]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output].Columns[PostalCode]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">3</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[RegionDescription]"
                           cachedDataType="wstr"
                           cachedLength="50"
@@ -4501,12 +4831,163 @@ where [refTable].[TitleID] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[Title]"
-                          cachedDataType="wstr"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[Address_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="60"
+                          cachedName="Address_Converted"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[Address]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Address_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[CityName_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="CityName_Converted"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CityName_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[CompanyName_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="CompanyName_Converted"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[CompanyName]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CompanyName_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[CountryCode_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="CountryCode_Converted"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[CountryCode]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CountryCode_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[CustomerID_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="CustomerID_Converted"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[CustomerID]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CustomerID_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[Fax_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="24"
+                          cachedName="Fax_Converted"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[Fax]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Fax_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[ContactName_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="30"
-                          cachedName="Title"
+                          cachedName="ContactName_Converted"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[FullName]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[ContactName_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[Phone_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="24"
+                          cachedName="Phone_Converted"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[Phone]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Phone_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[PostalCode_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="PostalCode_Converted"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[PostalCode]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[PostalCode_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[RegionDescription_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RegionDescription_Converted"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[RegionDescription]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[RegionDescription_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].Columns[Title_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Title_Converted"
                           externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[Title]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Lookup Title.Outputs[Lookup Match Output].Columns[Title]">
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Title_Converted]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -4527,13 +5008,13 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="50"
                           name="City" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[CompanyName]"
                           codePage="1252"
                           dataType="str"
-                          length="40"
+                          length="50"
                           name="CompanyName" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country]"
@@ -4551,31 +5032,31 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[CustomerID]"
                           codePage="1252"
                           dataType="str"
-                          length="5"
+                          length="10"
                           name="CustomerID" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[Fax]"
                           codePage="1252"
                           dataType="str"
-                          length="24"
+                          length="50"
                           name="Fax" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[FullName]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
+                          length="50"
                           name="FullName" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[Phone]"
                           codePage="1252"
                           dataType="str"
-                          length="24"
+                          length="50"
                           name="Phone" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[PostalCode]"
                           codePage="1252"
                           dataType="str"
-                          length="10"
+                          length="50"
                           name="PostalCode" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[RegionDescription]"
@@ -4587,7 +5068,7 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[Title]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
+                          length="50"
                           name="Title" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input].ExternalColumns[EffectiveDate]"
@@ -4742,21 +5223,6 @@ where [refTable].[TitleID] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].Columns[CompanyName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="CompanyName"
-                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[CompanyName]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_USA.Outputs[OLE DB Source Output].Columns[CompanyName]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">3</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].Columns[Country]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -4772,12 +5238,13 @@ where [refTable].[TitleID] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].Columns[CountryCode]"
-                          cachedDataType="wstr"
-                          cachedLength="2"
-                          cachedName="CountryCode"
-                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[CountryCode]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Lookup CountryCode.Outputs[Lookup Match Output].Columns[CountryCode]">
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].Columns[RegionDescription]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RegionDescription"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[RegionDescription]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription USA.Outputs[Lookup Match Output].Columns[RegionDescription]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -4786,18 +5253,33 @@ where [refTable].[TitleID] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].Columns[CustomerID]"
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].Columns[CompanyName]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="CustomerID"
-                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[CustomerID]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_USA.Outputs[OLE DB Source Output].Columns[CustomerID]">
+                          cachedLength="50"
+                          cachedName="CompanyName"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[CompanyName]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_USA.Outputs[OLE DB Source Output].Columns[CompanyName]">
                           <properties>
                             <property
                               dataType="System.Int32"
                               name="ColumnType"
-                              typeConverter="ColumnType">1</property>
+                              typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].Columns[CountryCode_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="CountryCode_Converted"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[CountryCode]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Outputs[Data Conversion Output].Columns[CountryCode_Converted]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">3</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -4861,21 +5343,6 @@ where [refTable].[TitleID] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].Columns[RegionDescription]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="RegionDescription"
-                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[RegionDescription]"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription USA.Outputs[Lookup Match Output].Columns[RegionDescription]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">3</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].Columns[ContactTitle]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -4888,6 +5355,21 @@ where [refTable].[TitleID] = ?</property>
                               dataType="System.Int32"
                               name="ColumnType"
                               typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].Columns[CustomerID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="CustomerID"
+                          externalMetadataColumnId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[CustomerID]"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Customers_USA.Outputs[OLE DB Source Output].Columns[CustomerID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">1</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -4903,13 +5385,13 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="50"
                           name="City" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[CompanyName]"
                           codePage="1252"
                           dataType="str"
-                          length="40"
+                          length="50"
                           name="CompanyName" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country]"
@@ -4927,31 +5409,31 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[CustomerID]"
                           codePage="1252"
                           dataType="str"
-                          length="5"
+                          length="10"
                           name="CustomerID" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[Fax]"
                           codePage="1252"
                           dataType="str"
-                          length="24"
+                          length="50"
                           name="Fax" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[FullName]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
+                          length="50"
                           name="FullName" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[Phone]"
                           codePage="1252"
                           dataType="str"
-                          length="24"
+                          length="50"
                           name="Phone" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[PostalCode]"
                           codePage="1252"
                           dataType="str"
-                          length="10"
+                          length="50"
                           name="PostalCode" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[RegionDescription]"
@@ -4963,7 +5445,7 @@ where [refTable].[TitleID] = ?</property>
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[Title]"
                           codePage="1252"
                           dataType="str"
-                          length="30"
+                          length="50"
                           name="Title" />
                         <externalMetadataColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input].ExternalColumns[EffectiveDate]"
@@ -5278,13 +5760,163 @@ where [refTable].[TitleID] = ?</property>
                           cachedDataType="str"
                           cachedLength="5"
                           cachedName="CustomerID_Converted"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Output].Columns[CustomerID_Converted]">
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CustomerID_Converted]">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CustomerID_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 1].Columns[CompanyName_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="CompanyName_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CompanyName_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CompanyName_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 1].Columns[ContactName_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="ContactName_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[ContactName_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[ContactName_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 1].Columns[Address_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="60"
+                          cachedName="Address_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Address_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Address_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 1].Columns[PostalCode_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="PostalCode_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[PostalCode_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[PostalCode_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 1].Columns[CountryCode_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="CountryCode_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CountryCode_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CountryCode_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 1].Columns[Phone_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="24"
+                          cachedName="Phone_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Phone_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Phone_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 1].Columns[Fax_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="24"
+                          cachedName="Fax_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Fax_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Fax_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 1].Columns[CityName_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="CityName_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CityName_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CityName_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 1].Columns[RegionDescription_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RegionDescription_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[RegionDescription_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[RegionDescription_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 1].Columns[Title_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Title_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Title_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Title_Converted]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -5534,13 +6166,163 @@ where [refTable].[TitleID] = ?</property>
                           cachedDataType="str"
                           cachedLength="5"
                           cachedName="CustomerID_Converted"
-                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Output].Columns[CustomerID_Converted]">
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CustomerID_Converted]">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CustomerID_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 2].Columns[CompanyName_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="CompanyName_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CompanyName_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CompanyName_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 2].Columns[ContactName_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="ContactName_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[ContactName_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[ContactName_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 2].Columns[Address_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="60"
+                          cachedName="Address_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Address_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Address_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 2].Columns[PostalCode_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="PostalCode_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[PostalCode_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[PostalCode_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 2].Columns[CountryCode_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="CountryCode_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CountryCode_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CountryCode_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 2].Columns[Phone_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="24"
+                          cachedName="Phone_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Phone_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Phone_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 2].Columns[Fax_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="24"
+                          cachedName="Fax_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Fax_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Fax_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 2].Columns[CityName_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="CityName_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[CityName_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CityName_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 2].Columns[RegionDescription_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RegionDescription_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[RegionDescription_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[RegionDescription_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 2].Columns[Title_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Title_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output].Columns[Title_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Title_Converted]}</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
@@ -5663,6 +6445,76 @@ where [refTable].[TitleID] = ?</property>
                           length="5"
                           lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CustomerID_Converted]"
                           name="CustomerID_Converted" />
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CompanyName_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CompanyName_Converted]"
+                          name="CompanyName_Converted" />
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[ContactName_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[ContactName_Converted]"
+                          name="ContactName_Converted" />
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Address_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          length="60"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Address_Converted]"
+                          name="Address_Converted" />
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[PostalCode_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[PostalCode_Converted]"
+                          name="PostalCode_Converted" />
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CountryCode_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CountryCode_Converted]"
+                          name="CountryCode_Converted" />
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Phone_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          length="24"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Phone_Converted]"
+                          name="Phone_Converted" />
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Fax_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          length="24"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Fax_Converted]"
+                          name="Fax_Converted" />
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CityName_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[CityName_Converted]"
+                          name="CityName_Converted" />
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[RegionDescription_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[RegionDescription_Converted]"
+                          name="RegionDescription_Converted" />
+                        <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Title_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1].Columns[Title_Converted]"
+                          name="Title_Converted" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -5855,6 +6707,21 @@ where [refTable].[TitleID] = ?</property>
                               dataType="System.Int32"
                               description="Output column lineage ID"
                               name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All 1.Outputs[Union All Output 1].Columns[CountryCode]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Inputs[Union All Input 1].Columns[CountryCode_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="CountryCode_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Outputs[Data Conversion Output].Columns[CountryCode_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All 1.Outputs[Union All Output 1].Columns[CountryCode_Converted]}</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -6058,6 +6925,21 @@ where [refTable].[TitleID] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Inputs[Union All Input 2].Columns[CountryCode_Converted]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="CountryCode_Converted"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Outputs[Data Conversion Output].Columns[CountryCode_Converted]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Load Business Dimensions\Load DimCustomer\Union All 1.Outputs[Union All Output 1].Columns[CountryCode_Converted]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Inputs[Union All Input 2].Columns[RegionDescription]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -6170,6 +7052,13 @@ where [refTable].[TitleID] = ?</property>
                           lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Outputs[Union All Output 1].Columns[CountryCode]"
                           name="CountryCode" />
                         <outputColumn
+                          refId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Outputs[Union All Output 1].Columns[CountryCode_Converted]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Outputs[Union All Output 1].Columns[CountryCode_Converted]"
+                          name="CountryCode_Converted" />
+                        <outputColumn
                           refId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Outputs[Union All Output 1].Columns[RegionDescription]"
                           codePage="1252"
                           dataType="str"
@@ -6185,49 +7074,59 @@ where [refTable].[TitleID] = ?</property>
               <paths>
                 <path
                   refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Changing Attribute Updates Output1]"
-                  endId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 3.Inputs[OLE DB Command Input]"
-                  name="Changing Attribute Updates Output"
-                  startId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Outputs[Changing Attribute Updates Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Changing Attribute Updates Output]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1.Inputs[OLE DB Command Input]"
                   name="Changing Attribute Updates Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Outputs[Changing Attribute Updates Output]" />
                 <path
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Changing Attribute Updates Output]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 3.Inputs[OLE DB Command Input]"
+                  name="Changing Attribute Updates Output"
+                  startId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Outputs[Changing Attribute Updates Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Data Conversion Output1]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription USA.Inputs[Lookup Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Outputs[Data Conversion Output]" />
+                <path
                   refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Data Conversion Output]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input]"
                   name="Data Conversion Output"
-                  startId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Outputs[Data Conversion Output]" />
+                  startId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output2]"
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 2.Inputs[OLE DB Command Input]"
                   name="Derived Column Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 2.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output]"
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output2]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Derived Column Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Derived Column.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output3]"
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output1]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 3.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output1]"
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output3]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Insert Destination.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 1.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Historical Attribute Inserts Output]"
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Historical Attribute Inserts Output1]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Derived Column.Inputs[Derived Column Input]"
                   name="Historical Attribute Inserts Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Outputs[Historical Attribute Inserts Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Historical Attribute Inserts Output1]"
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Historical Attribute Inserts Output]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 2.Inputs[Derived Column Input]"
                   name="Historical Attribute Inserts Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Outputs[Historical Attribute Inserts Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\Lookup Title.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup Country.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output2]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription UK.Inputs[Lookup Input]"
@@ -6235,49 +7134,44 @@ where [refTable].[TitleID] = ?</property>
                   startId="Package\Load Business Dimensions\Load DimCustomer\Lookup City.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output3]"
-                  endId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription USA.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup CountryCode.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output4]"
-                  endId="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID.Inputs[Data Conversion Input]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes.Inputs[Data Conversion Input]"
                   name="Lookup Match Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription UK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output5]"
-                  endId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription USA.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output1]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Lookup City.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Lookup Title.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output]"
-                  endId="Package\Load Business Dimensions\Load DimCustomer\Lookup Title.Inputs[Lookup Input]"
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output5]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode.Inputs[Data Conversion Input]"
                   name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup Country.Outputs[Lookup Match Output]" />
+                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup CountryCode.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output4]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription USA.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimCustomer.Paths[New Output1]"
-                  endId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Inputs[Union All Input 1]"
-                  name="New Output"
-                  startId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Outputs[New Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[New Output]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 1]"
                   name="New Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Outputs[New Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[OLE DB Command Output1]"
-                  endId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Inputs[Union All Input 2]"
-                  name="OLE DB Command Output"
-                  startId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 2.Outputs[OLE DB Command Output]" />
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[New Output]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Inputs[Union All Input 1]"
+                  name="New Output"
+                  startId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA.Outputs[New Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[OLE DB Command Output]"
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[OLE DB Command Output1]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 2]"
                   name="OLE DB Command Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[OLE DB Command Output]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Inputs[Union All Input 2]"
+                  name="OLE DB Command Output"
+                  startId="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 2.Outputs[OLE DB Command Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimCustomer.Paths[OLE DB Source Output1]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Lookup CountryCode.Inputs[Lookup Input]"
@@ -6289,12 +7183,12 @@ where [refTable].[TitleID] = ?</property>
                   name="OLE DB Source Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Customers_UK.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Union All Output 11]"
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Union All Output 1]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 3.Inputs[Derived Column Input]"
                   name="Union All Output 1"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Union All 1.Outputs[Union All Output 1]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Union All Output 1]"
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Union All Output 11]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Derived Column 1.Inputs[Derived Column Input]"
                   name="Union All Output 1"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Union All.Outputs[Union All Output 1]" />
@@ -16084,7 +16978,7 @@ where [refTable].[RegionID] = ?</property>
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Load Business Dimensions\Load DimCustomer\Customers_USA"
-          TopLeft="163.9,310.3" />
+          TopLeft="163.9,208.7" />
         <NodeLayout
           Size="230.4,41.6"
           Id="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension USA"
@@ -16096,7 +16990,7 @@ where [refTable].[RegionID] = ?</property>
         <NodeLayout
           Size="176,41.6"
           Id="Package\Load Business Dimensions\Load DimCustomer\Lookup CountryCode"
-          TopLeft="152.7,411.9" />
+          TopLeft="152.7,310.3" />
         <NodeLayout
           Size="223.2,41.6"
           Id="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription USA"
@@ -16118,40 +17012,16 @@ where [refTable].[RegionID] = ?</property>
           Id="Package\Load Business Dimensions\Load DimCustomer\Lookup Country"
           TopLeft="673.3,107.1" />
         <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Load Business Dimensions\Load DimCustomer\Convert CustomerID"
-          TopLeft="662.5,513.5" />
+          Size="164,41.6"
+          Id="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes"
+          TopLeft="667.7,513.5" />
         <NodeLayout
           Size="136,41.6"
           Id="Package\Load Business Dimensions\Load DimCustomer\Lookup Title"
           TopLeft="681.7,208.7" />
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output4]"
-          TopLeft="749.7,453.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output3]"
-          TopLeft="240.7,453.5">
+          TopLeft="749.7,453.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16269,7 +17139,7 @@ where [refTable].[RegionID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Business Dimensions\Load DimCustomer.Paths[OLE DB Source Output1]"
-          TopLeft="240.7,351.9">
+          TopLeft="240.7,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16312,7 +17182,7 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output5]"
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output4]"
           TopLeft="240.7,555.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16336,52 +17206,36 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Load Business Dimensions\Load DimCustomer\Derived Column"
-          TopLeft="536.3,716.699999999999" />
+          Size="178.4,41.6"
+          Id="Package\Load Business Dimensions\Load DimCustomer\Convert CountryCode"
+          TopLeft="151.5,411.9" />
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Historical Attribute Inserts Output]"
-          TopLeft="695.5,656.699999999999">
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output5]"
+          TopLeft="240.7,351.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-82.8000000000001,59.9999999999999"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="-82.8000000000001,52.4999999999999">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.4689331770223" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.4689331770223"
-                    Point2="0,20.4689331770223"
-                    Point3="-4,20.4689331770223" />
-                  <mssgle:LineSegment
-                    End="-78.8000000000001,20.4689331770223" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-78.8000000000001,20.4689331770223"
-                    Point2="-82.8000000000001,20.4689331770223"
-                    Point3="-82.8000000000001,24.4689331770223" />
-                  <mssgle:LineSegment
-                    End="-82.8000000000001,52.4999999999999" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-116.45638671875,25.4689331770223,150.1127734375,11.609375"
+              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command"
-          TopLeft="524.3,818.299999999999" />
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output]"
-          TopLeft="609.7,758.299999999999">
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Data Conversion Output1]"
+          TopLeft="240.7,453.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16399,172 +17253,6 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Load Business Dimensions\Load DimCustomer\Union All"
-          TopLeft="689.7,919.899999999999" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[New Output]"
-          TopLeft="749.7,656.699999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.6666666666666,263.2"
-              Start="0,0"
-              End="18.6666666666666,255.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,151.842105263158" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,151.842105263158"
-                    Point2="0,155.842105263158"
-                    Point3="4,155.842105263158" />
-                  <mssgle:LineSegment
-                    End="14.6666666666666,155.842105263158" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.6666666666666,155.842105263158"
-                    Point2="18.6666666666666,155.842105263158"
-                    Point3="18.6666666666666,159.842105263158" />
-                  <mssgle:LineSegment
-                    End="18.6666666666666,255.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.7580533854167,160.842105263158,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[OLE DB Command Output]"
-          TopLeft="606.7,859.899999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="124.333333333333,59.9999999999999"
-              Start="0,0"
-              End="124.333333333333,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5263157894736" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5263157894736"
-                    Point2="0,35.5263157894736"
-                    Point3="4,35.5263157894736" />
-                  <mssgle:LineSegment
-                    End="120.333333333333,35.5263157894736" />
-                  <mssgle:CubicBezierSegment
-                    Point1="120.333333333333,35.5263157894736"
-                    Point2="124.333333333333,35.5263157894736"
-                    Point3="124.333333333333,39.5263157894736" />
-                  <mssgle:LineSegment
-                    End="124.333333333333,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Load Business Dimensions\Load DimCustomer\Derived Column 1"
-          TopLeft="668.5,1021.5" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Union All Output 1]"
-          TopLeft="749.7,961.499999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Load Business Dimensions\Load DimCustomer\Insert Destination"
-          TopLeft="668.5,1123.1" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output1]"
-          TopLeft="749.7,1063.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1"
-          TopLeft="810.5,716.699999999999" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Changing Attribute Updates Output]"
-          TopLeft="803.9,656.699999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="93.8,59.9999999999999"
-              Start="0,0"
-              End="93.8,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.4689331770222" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.4689331770222"
-                    Point2="0,20.4689331770222"
-                    Point3="4,20.4689331770222" />
-                  <mssgle:LineSegment
-                    End="89.8,20.4689331770222" />
-                  <mssgle:CubicBezierSegment
-                    Point1="89.8,20.4689331770222"
-                    Point2="93.8,20.4689331770222"
-                    Point3="93.8,24.4689331770222" />
-                  <mssgle:LineSegment
-                    End="93.8,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-31.6339062500001,25.4689331770222,157.0678125,11.6630859375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -16572,7 +17260,7 @@ where [refTable].[RegionID] = ?</property>
           Id="Package\Load Business Dimensions\Load DimCustomer\Derived Column 2"
           TopLeft="17.5000000000002,716.699999999999" />
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Historical Attribute Inserts Output1]"
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Historical Attribute Inserts Output]"
           TopLeft="185.1,656.699999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16612,7 +17300,7 @@ where [refTable].[RegionID] = ?</property>
           Id="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 2"
           TopLeft="5.50000000000016,818.299999999999" />
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output2]"
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output]"
           TopLeft="95.7000000000002,758.299999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16638,7 +17326,7 @@ where [refTable].[RegionID] = ?</property>
           Id="Package\Load Business Dimensions\Load DimCustomer\Union All 1"
           TopLeft="175.9,919.899999999999" />
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[New Output1]"
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[New Output]"
           TopLeft="240.7,656.699999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16674,7 +17362,7 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[OLE DB Command Output1]"
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[OLE DB Command Output]"
           TopLeft="92.7000000000002,859.899999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16712,7 +17400,7 @@ where [refTable].[RegionID] = ?</property>
           Id="Package\Load Business Dimensions\Load DimCustomer\Derived Column 3"
           TopLeft="159.5,1021.5" />
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Union All Output 11]"
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Union All Output 1]"
           TopLeft="240.7,961.499999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16738,7 +17426,7 @@ where [refTable].[RegionID] = ?</property>
           Id="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1"
           TopLeft="155.1,1123.1" />
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output3]"
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output1]"
           TopLeft="240.7,1063.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16764,7 +17452,7 @@ where [refTable].[RegionID] = ?</property>
           Id="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 3"
           TopLeft="301.5,716.699999999999" />
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Changing Attribute Updates Output1]"
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Changing Attribute Updates Output]"
           TopLeft="296.3,656.699999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16796,6 +17484,238 @@ where [refTable].[RegionID] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-32.33390625,25.4576659038902,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Load Business Dimensions\Load DimCustomer\Derived Column"
+          TopLeft="536.3,716.699999999999" />
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Historical Attribute Inserts Output1]"
+          TopLeft="695.5,656.699999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82.8000000000001,59.9999999999999"
+              Start="0,0"
+              End="-82.8000000000001,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4689331770223" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4689331770223"
+                    Point2="0,20.4689331770223"
+                    Point3="-4,20.4689331770223" />
+                  <mssgle:LineSegment
+                    End="-78.8000000000001,20.4689331770223" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.8000000000001,20.4689331770223"
+                    Point2="-82.8000000000001,20.4689331770223"
+                    Point3="-82.8000000000001,24.4689331770223" />
+                  <mssgle:LineSegment
+                    End="-82.8000000000001,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-116.45638671875,25.4689331770223,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command"
+          TopLeft="524.3,818.299999999999" />
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output2]"
+          TopLeft="609.7,758.299999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Load Business Dimensions\Load DimCustomer\Union All"
+          TopLeft="689.7,919.899999999999" />
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[New Output1]"
+          TopLeft="749.7,656.699999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.6666666666666,263.2"
+              Start="0,0"
+              End="18.6666666666666,255.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,151.842105263158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,151.842105263158"
+                    Point2="0,155.842105263158"
+                    Point3="4,155.842105263158" />
+                  <mssgle:LineSegment
+                    End="14.6666666666666,155.842105263158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.6666666666666,155.842105263158"
+                    Point2="18.6666666666666,155.842105263158"
+                    Point3="18.6666666666666,159.842105263158" />
+                  <mssgle:LineSegment
+                    End="18.6666666666666,255.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.7580533854167,160.842105263158,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[OLE DB Command Output1]"
+          TopLeft="606.7,859.899999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.333333333333,59.9999999999999"
+              Start="0,0"
+              End="124.333333333333,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5263157894736" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5263157894736"
+                    Point2="0,35.5263157894736"
+                    Point3="4,35.5263157894736" />
+                  <mssgle:LineSegment
+                    End="120.333333333333,35.5263157894736" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.333333333333,35.5263157894736"
+                    Point2="124.333333333333,35.5263157894736"
+                    Point3="124.333333333333,39.5263157894736" />
+                  <mssgle:LineSegment
+                    End="124.333333333333,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Load Business Dimensions\Load DimCustomer\Derived Column 1"
+          TopLeft="668.5,1021.5" />
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Union All Output 11]"
+          TopLeft="749.7,961.499999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Load Business Dimensions\Load DimCustomer\Insert Destination"
+          TopLeft="668.5,1123.1" />
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Derived Column Output3]"
+          TopLeft="749.7,1063.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Load Business Dimensions\Load DimCustomer\OLE DB Command 1"
+          TopLeft="810.5,716.699999999999" />
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Changing Attribute Updates Output1]"
+          TopLeft="803.9,656.699999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="93.8,59.9999999999999"
+              Start="0,0"
+              End="93.8,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4689331770222" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4689331770222"
+                    Point2="0,20.4689331770222"
+                    Point3="4,20.4689331770222" />
+                  <mssgle:LineSegment
+                    End="89.8,20.4689331770222" />
+                  <mssgle:CubicBezierSegment
+                    Point1="89.8,20.4689331770222"
+                    Point2="93.8,20.4689331770222"
+                    Point3="93.8,24.4689331770222" />
+                  <mssgle:LineSegment
+                    End="93.8,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-31.6339062500001,25.4689331770222,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -16851,7 +17771,7 @@ where [refTable].[RegionID] = ?</property>
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Lookup CountryCode.Outputs[Lookup Match Output].Columns[CountryCode]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Convert CountryCode.Outputs[Data Conversion Output].Columns[CountryCode_Converted]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;CountryCode&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
@@ -17003,19 +17923,19 @@ where [refTable].[RegionID] = ?</property>
   &lt;TableName&gt;[dbo].[DimCustomer]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Customers_UK.Outputs[OLE DB Source Output].Columns[Address]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Convert Attributes.Outputs[Data Conversion Output].Columns[Address_Converted]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Address&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Lookup City.Outputs[Lookup Match Output].Columns[CityName]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Convert Attributes.Outputs[Data Conversion Output].Columns[CityName_Converted]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;City&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Customers_UK.Outputs[OLE DB Source Output].Columns[CompanyName]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Convert Attributes.Outputs[Data Conversion Output].Columns[CompanyName_Converted]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;CompanyName&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
@@ -17027,49 +17947,49 @@ where [refTable].[RegionID] = ?</property>
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Customers_UK.Outputs[OLE DB Source Output].Columns[CountryCode]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Convert Attributes.Outputs[Data Conversion Output].Columns[CountryCode_Converted]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;CountryCode&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Convert CustomerID.Outputs[Data Conversion Output].Columns[CustomerID_Converted]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Convert Attributes.Outputs[Data Conversion Output].Columns[CustomerID_Converted]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;CustomerID&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Customers_UK.Outputs[OLE DB Source Output].Columns[Fax]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Convert Attributes.Outputs[Data Conversion Output].Columns[Fax_Converted]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Fax&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Customers_UK.Outputs[OLE DB Source Output].Columns[ContactName]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Convert Attributes.Outputs[Data Conversion Output].Columns[ContactName_Converted]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;FullName&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Customers_UK.Outputs[OLE DB Source Output].Columns[Phone]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Convert Attributes.Outputs[Data Conversion Output].Columns[Phone_Converted]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Phone&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Customers_UK.Outputs[OLE DB Source Output].Columns[PostalCode]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Convert Attributes.Outputs[Data Conversion Output].Columns[PostalCode_Converted]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;PostalCode&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Lookup RegionDescription UK.Outputs[Lookup Match Output].Columns[RegionDescription]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Convert Attributes.Outputs[Data Conversion Output].Columns[RegionDescription_Converted]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;RegionDescription&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Lookup Title.Outputs[Lookup Match Output].Columns[Title]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Convert Attributes.Outputs[Data Conversion Output].Columns[Title_Converted]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Title&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
@@ -18952,6 +19872,32 @@ where [refTable].[RegionID] = ?</property>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Load Temporal Dimensions\Load DimDate\DimDate">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Business Dimensions\Load DimCustomer\Insert Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Business Dimensions\Load DimCustomer\Insert Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
