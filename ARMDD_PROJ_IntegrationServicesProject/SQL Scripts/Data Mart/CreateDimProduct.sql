@@ -18,7 +18,7 @@ BEGIN
         [supplierKey] INT NULL,
         [effectiveDate] DATETIME NULL,
         [expirationDate] DATETIME NULL,
-        [isCurrent] BIT NULL
+        [isCurrent] [nvarchar](3) NULL
     )
 
     CREATE NONCLUSTERED INDEX [NonClusteredIndex-DimProduct] ON [dbo].[DimProduct]

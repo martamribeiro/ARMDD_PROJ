@@ -13,7 +13,10 @@ BEGIN
         [supplierPostalCode] [varchar](50) NULL,
         [supplierCountryCode] [varchar](50) NULL,
         [supplierPhone] [varchar](50) NULL,
-        [supplierFax] [varchar](50) NULL
+        [supplierFax] [varchar](50) NULL,
+	[EffectiveDate] [datetime] NULL,
+        [ExpirationDate] [datetime] NULL,
+        [IsCurrent] [nvarchar](3) NULL
     )
 
     CREATE NONCLUSTERED INDEX [NonClusteredIndex-DimSupplier] ON [dbo].[DimSupplier]

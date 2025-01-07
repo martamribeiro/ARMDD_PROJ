@@ -8,7 +8,7 @@ IF NOT EXISTS (SELECT name FROM sys.tables WHERE name = 'DimShipper')
         [phone] VARCHAR(50) NULL, 
         [effectiveDate] DATETIME NOT NULL, 
         [expirationDate] DATETIME NULL, 
-        [isCurrent] BIT NOT NULL 
+        [isCurrent] [nvarchar](3) NOT NULL 
     )
 
     CREATE NONCLUSTERED INDEX [NonClusteredIndex-DimShipper] ON [dbo].[DimShipper]
