@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="213"
-  DTS:VersionGUID="{BAE19F9C-5AB7-408E-A841-6ED2D22DAC87}">
+  DTS:VersionBuild="214"
+  DTS:VersionGUID="{8F52F688-900A-42E4-B313-BA47655B89A9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41275,38 +41275,6 @@ where [refTable].[RegionID] = ?</property>
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Prepare Business Dimensions"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Sequence Container"
-      DTS:Disabled="True"
-      DTS:DTSID="{4E5AACE8-0823-4DAC-832B-E1BB68ADB34B}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Prepare Business Dimensions">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Prepare Business Dimensions\Prepare DimEmployee"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0C43EB1F-883F-416A-95F6-802C4095A58E}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Prepare DimEmployee"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:PropertyExpression
-            DTS:Name="Connection">@[$Project::ServerName]+"."+ @[$Project::DataMartDBName]</DTS:PropertyExpression>
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{D5362789-BAB0-49C7-8E78-1CAF26C52C25}"
-              SQLTask:SqlStatementSource="INSERT INTO [dbo].[DimEmployee]&#xA;(&#xA;    [EmployeeID], &#xA;    [FullName], &#xA;    [Title], &#xA;    [TitleOfCourtesy], &#xA;    [BirthDateKey], &#xA;    [HireDateKey], &#xA;    [Address], &#xA;    [PostalCode], &#xA;    [HomePhone], &#xA;    [Extension], &#xA;    [City], &#xA;    [RegionDescription], &#xA;    [ReportsToKey], &#xA;    [EffectiveDate], &#xA;    [ExpirationDate], &#xA;    [IsCurrent]&#xA;)&#xA;VALUES&#xA;(&#xA;    -1, -- Placeholder EmployeeID&#xA;    'No Manager', -- Placeholder FullName&#xA;    'N/A', -- Placeholder Title&#xA;    'N/A', -- Placeholder TitleOfCourtesy&#xA;    NULL, -- BirthDateKey (unknown)&#xA;    NULL, -- HireDateKey (unknown)&#xA;    'N/A', -- Placeholder Address&#xA;    'N/A', -- Placeholder PostalCode&#xA;    'N/A', -- Placeholder HomePhone&#xA;    NULL, -- Placeholder Extension&#xA;    'N/A', -- Placeholder City&#xA;    'N/A', -- Placeholder RegionDescription&#xA;    NULL, -- ReportsToKey (no manager)&#xA;    GETDATE(), -- EffectiveDate&#xA;    NULL, -- ExpirationDate (active indefinitely)&#xA;    'Yes' -- IsCurrent (active status)&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Prepare SA Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
@@ -41333,47 +41301,6 @@ where [refTable].[RegionID] = ?</property>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{8760715A-7329-4DF2-9954-FA6231D4A925}"
               SQLTask:SqlStatementSource="UPDATE [Customers_USA]&#xA;SET [Country] = 'Spain'&#xA;WHERE [Country] = 'Spaim';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Prepare SA Data\Prepare Employees_UK"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{0AE37BFC-D55F-4726-AD0B-8B7DD0683C23}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Prepare Employees_UK"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
-          <DTS:Variables />
-          <DTS:PropertyExpression
-            DTS:Name="Connection">@[$Project::ServerName]+"."+ @[$Project::StagingAreaDBName]</DTS:PropertyExpression>
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{8760715A-7329-4DF2-9954-FA6231D4A925}"
-              SQLTask:SqlStatementSource="UPDATE [Employees_USA]&#xA;SET [ReportsTo] = -1&#xA;WHERE [ReportsTo] IS NULL;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Prepare SA Data\Prepare Employees_USA"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
-          DTS:DTSID="{B4333D6A-34D3-42B9-9417-C34A81B30E7B}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Prepare Employees_USA"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
-          <DTS:Variables />
-          <DTS:PropertyExpression
-            DTS:Name="Connection">@[$Project::ServerName]+"."+ @[$Project::StagingAreaDBName]</DTS:PropertyExpression>
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{8760715A-7329-4DF2-9954-FA6231D4A925}"
-              SQLTask:BypassPrepare="False"
-              SQLTask:SqlStatementSource="UPDATE [Employees_USA]&#xA;SET [ReportsTo] = -1&#xA;WHERE [ReportsTo] IS NULL;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -41446,14 +41373,6 @@ where [refTable].[RegionID] = ?</property>
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Foreach SA Create Table Script" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
-      DTS:CreationName=""
-      DTS:DTSID="{FEA1F0F4-5C12-4699-88DC-290829968EC5}"
-      DTS:From="Package\Prepare Business Dimensions"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 10"
-      DTS:To="Package\Load Business Dimensions" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{396CD556-068C-4852-89B3-04C711AEB1B0}"
@@ -41496,11 +41415,11 @@ where [refTable].[RegionID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{4A92AE2F-4FC2-4762-8C68-AAC9160D4B1E}"
+      DTS:DTSID="{25B338D5-7F84-4AA2-B336-7346F82AFDB5}"
       DTS:From="Package\Load Temporal Dimensions"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
-      DTS:To="Package\Prepare Business Dimensions" />
+      DTS:To="Package\Load Business Dimensions" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
@@ -41598,29 +41517,29 @@ where [refTable].[RegionID] = ?</property>
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\Load Business Dimensions\Load DimShipTo"
-          TopLeft="127.771429526319,279.752940852717" />
+          TopLeft="120.628572368257,277.458823207669" />
         <NodeLayout
           Size="180.8,41.6"
           Id="Package\Load Business Dimensions\Load DimSupplier_UK"
-          TopLeft="390.142857413511,182.941176473269" />
+          TopLeft="390.142857413511,189.823529408413" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\Load Business Dimensions\Load DimSupplier_USA"
-          TopLeft="380.714285960611,115.294117645048" />
+          TopLeft="392.857143129317,114.529411763365" />
         <EdgeLayout
           Id="Package\Load Business Dimensions.PrecedenceConstraints[Constraint]"
-          TopLeft="477.428571687061,156.894117645048">
+          TopLeft="483.500000271414,156.129411763365">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.0470588282216"
+              EndConnector="0,33.6941176450476"
               Start="0,0"
-              End="0,18.5470588282216">
+              End="0,26.1941176450476">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5470588282216" />
+                    End="0,26.1941176450476" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -41631,18 +41550,18 @@ where [refTable].[RegionID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Business Dimensions.PrecedenceConstraints[Constraint 1]"
-          TopLeft="483.542857413511,224.541176473269">
+          TopLeft="483.542857413511,231.423529408413">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.9882352900958"
+              EndConnector="0,44.1058823549521"
               Start="0,0"
-              End="0,43.4882352900958">
+              End="0,36.6058823549521">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.4882352900958" />
+                    End="0,36.6058823549521" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -41676,10 +41595,10 @@ where [refTable].[RegionID] = ?</property>
         <NodeLayout
           Size="302.4,41.6"
           Id="Package\Load Business Dimensions\Load DimEmployee (Employees with Managers)"
-          TopLeft="52.2857148908839,187.023529226094" />
+          TopLeft="45.8571434486276,187.023529226094" />
         <EdgeLayout
           Id="Package\Load Business Dimensions.PrecedenceConstraints[Constraint 3]"
-          TopLeft="199.942857807327,157.405882411927">
+          TopLeft="196.728572086199,157.405882411927">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -41705,7 +41624,7 @@ where [refTable].[RegionID] = ?</property>
           PanelSize="850.4,461.6"
           Size="850.4,504.8"
           Id="Package\Load Business Dimensions"
-          TopLeft="22.8571429057993,1353.0235294312" />
+          TopLeft="150.714286035116,1336.96470591586" />
         <NodeLayout
           Size="190.4,41.6"
           Id="Package\Load Temporal Dimensions\Is DimCurrency Empty?"
@@ -41778,33 +41697,14 @@ where [refTable].[RegionID] = ?</property>
           Id="Package\Load Temporal Dimensions"
           TopLeft="588.285715540149,556.423529191908" />
         <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Prepare Business Dimensions\Prepare DimEmployee"
-          TopLeft="32.4571449068129,35.7176472813612" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="240,132"
-          Size="240,175.2"
-          Id="Package\Prepare Business Dimensions"
-          TopLeft="707.142858648179,934.117647099041" />
-        <NodeLayout
           Size="192.8,41.6"
           Id="Package\Prepare SA Data\Prepare Customers_USA"
           TopLeft="36.6857144438492,20.5764704320568" />
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\Prepare SA Data\Prepare Employees_UK"
-          TopLeft="255.114286397002,86.023529465388" />
-        <NodeLayout
-          Size="193.6,41.6"
-          Id="Package\Prepare SA Data\Prepare Employees_USA"
-          TopLeft="39.4000002235174,86.023529465388" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="532,218.4"
-          Size="532,261.6"
+          PanelSize="532,131.2"
+          Size="532,174.4"
           Id="Package\Prepare SA Data"
           TopLeft="37.5714286535371,1048.05882387997" />
         <NodeLayout
@@ -41851,40 +41751,6 @@ where [refTable].[RegionID] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,82.370588145474" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="827.142858648179,1109.31764709904">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-238.68571574238,243.705882332159"
-              Start="0,0"
-              End="-238.68571574238,236.205882332159">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,141.94893122202" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,141.94893122202"
-                    Point2="0,145.94893122202"
-                    Point3="-4,145.94893122202" />
-                  <mssgle:LineSegment
-                    End="-234.68571574238,145.94893122202" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-234.68571574238,145.94893122202"
-                    Point2="-238.68571574238,145.94893122202"
-                    Point3="-238.68571574238,149.94893122202" />
-                  <mssgle:LineSegment
-                    End="-238.68571574238,236.205882332159" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -42016,41 +41882,19 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="829.314287094164,832.423529191908">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,101.694117907133"
-              Start="0,0"
-              End="0,94.1941179071331">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,94.1941179071331" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
           TopLeft="305.728571708349,981.976470261132">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.0823536188356"
+              EndConnector="0,66.0823536188381"
               Start="0,0"
-              End="0,58.5823536188356">
+              End="0,58.5823536188381">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.5823536188356" />
+                    End="0,58.5823536188381" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -42061,18 +41905,64 @@ where [refTable].[RegionID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="305.614285779668,1309.65882387997">
+          TopLeft="303.571428653537,1222.45882387997">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.3647055512299"
+              EndConnector="131.942857381579,114.505882035894"
               Start="0,0"
-              End="0,35.8647055512299">
+              End="131.942857381579,107.005882035894">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.8647055512299" />
+                    End="0,64.5745085093833" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,64.5745085093833"
+                    Point2="0,68.5745085093833"
+                    Point3="4,68.5745085093833" />
+                  <mssgle:LineSegment
+                    End="127.942857381579,68.5745085093833" />
+                  <mssgle:CubicBezierSegment
+                    Point1="127.942857381579,68.5745085093833"
+                    Point2="131.942857381579,68.5745085093833"
+                    Point3="131.942857381579,72.5745085093833" />
+                  <mssgle:LineSegment
+                    End="131.942857381579,107.005882035894" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="831.485715540149,832.423529191908">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-115.171429505033,504.541176723956"
+              Start="0,0"
+              End="-115.171429505033,497.041176723956">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,298.15620893384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,298.15620893384"
+                    Point2="0,302.15620893384"
+                    Point3="-4,302.15620893384" />
+                  <mssgle:LineSegment
+                    End="-111.171429505033,302.15620893384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-111.171429505033,302.15620893384"
+                    Point2="-115.171429505033,302.15620893384"
+                    Point3="-115.171429505033,306.15620893384" />
+                  <mssgle:LineSegment
+                    End="-115.171429505033,497.041176723956" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
