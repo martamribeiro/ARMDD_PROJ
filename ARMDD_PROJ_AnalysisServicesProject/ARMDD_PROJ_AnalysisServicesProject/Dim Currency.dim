@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="71a6d0bb-34c0-469d-a19b-d0a33e57af87" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d5d72fcf-1f1f-4303-b519-cacbb16e5940" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Dim Currency</ID>
   <Name>Dim Currency</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4224" scrolltop="-3778" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="11557" y="11303" backcolor="16119285" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4224" scrolltop="-2233" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="11557" y="8213" backcolor="16119285" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
             </font>
@@ -51,7 +51,7 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>-3778</Value>
+      <Value>-2233</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -68,45 +68,45 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="423f0181-9477-4bd9-9dd7-534727166355">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="3e1ddbee-ec05-4a12-ac6b-6230d9d15bf5">
     <DataSourceViewID>ARMDD PROJ Data Mart</DataSourceViewID>
   </Source>
   <UnknownMember>Visible</UnknownMember>
-  <ErrorConfiguration dwd:design-time-name="00913434-2c6a-4aad-848f-67508a821cd7">
+  <ErrorConfiguration dwd:design-time-name="b9133925-369f-430b-8ca1-be4c127b3581">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="e388fe31-ae6a-4b4a-bec7-986848f28f7d">
+    <Attribute dwd:design-time-name="5d82cea2-4f26-4452-83ee-11ab044968a9">
       <ID>Currency Key</ID>
       <Name>Currency Key</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="5ab96f71-7201-420c-9e99-d366a34b3668">
+        <KeyColumn dwd:design-time-name="c7113bc3-5643-42f7-9615-ace10ec88027">
           <DataType>Integer</DataType>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="2a7c50aa-b904-4bb4-9897-97d5c199a33a">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="56ad57a6-a9ab-4ade-88fa-4c1719e30377">
             <TableID>dbo_DimCurrency</TableID>
             <ColumnID>CurrencyKey</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="ce8765d6-db43-41c4-8110-7bdc3611a29c">
+        <AttributeRelationship dwd:design-time-name="6ac37eda-de57-45cc-b624-f3c6ba8e1333">
           <AttributeID>Currency Code</AttributeID>
           <Name>Currency Code</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="62f58432-a23a-495b-bfd1-2740058683f6">
+        <AttributeRelationship dwd:design-time-name="b8809aa3-b8ac-4f9f-be5f-882809177ff2">
           <AttributeID>Currency Name</AttributeID>
           <Name>Currency Name</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="0ba39831-ecc9-4665-b902-22276dc36af2">
+        <AttributeRelationship dwd:design-time-name="cb77c379-7f12-4093-bbb6-bc3fd3d2eeb5">
           <AttributeID>Rate To USD</AttributeID>
           <Name>Rate To USD</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="36aba6fe-be2a-49ac-8313-b1574f53b8bd">
+        <AttributeRelationship dwd:design-time-name="0c35d2e5-7f87-4b1f-bc51-8203347c7660">
           <AttributeID>Symbol</AttributeID>
           <Name>Symbol</Name>
         </AttributeRelationship>
@@ -115,14 +115,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="f555cf38-82d6-476d-9e3c-614f56144925">
+    <Attribute dwd:design-time-name="daa83afa-c316-4855-9da6-9e42e1e45f9c">
       <ID>Currency Code</ID>
       <Name>Currency Code</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="6342d963-24a5-4b8b-ac81-277632ff6505">
+        <KeyColumn dwd:design-time-name="2bd93b5c-bfc6-40e0-b8cd-1f0e9ee69f94">
           <DataType>WChar</DataType>
           <DataSize>20</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="5cefe601-c48c-436d-8153-9f536f004246">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e1314a84-c491-4110-8dfc-3536b48f285e">
             <TableID>dbo_DimCurrency</TableID>
             <ColumnID>CurrencyCode</ColumnID>
           </Source>
@@ -131,14 +131,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="d01ea22c-6e26-4107-8dbd-9808a24b522c">
+    <Attribute dwd:design-time-name="890866b7-1bda-4998-898a-2db821052797">
       <ID>Currency Name</ID>
       <Name>Currency Name</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="62518704-7007-4456-9c1b-4f40c5fe5409">
+        <KeyColumn dwd:design-time-name="928e594d-ca00-42e9-bc3e-0b5558a5ee4b">
           <DataType>WChar</DataType>
           <DataSize>20</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="bf75526d-62d1-4e04-8a69-9cf30229700d">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="50dec3e8-47e8-400f-9833-39297fe3db92">
             <TableID>dbo_DimCurrency</TableID>
             <ColumnID>CurrencyName</ColumnID>
           </Source>
@@ -147,14 +147,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="0ec06c45-aa30-422f-a5dd-a5e95188184a">
+    <Attribute dwd:design-time-name="ef384c57-212f-4169-afbe-b4391d652c8f">
       <ID>Rate To USD</ID>
       <Name>Rate To USD</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="9e917a2b-47d7-4e01-9cb9-065e00ee9f46">
+        <KeyColumn dwd:design-time-name="1b09f1c4-26d4-4529-bb64-838f3576b1dc">
           <DataType>WChar</DataType>
           <DataSize>20</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="bad3d0d6-5f25-4b5a-86c8-aadeb5c2c859">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="09ae02b6-21a7-473b-a3a9-b87bf405cef2">
             <TableID>dbo_DimCurrency</TableID>
             <ColumnID>RateToUSD</ColumnID>
           </Source>
@@ -163,14 +163,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="ff93f53a-9ef9-4b38-b2c4-70cb8fb20e36">
+    <Attribute dwd:design-time-name="d98f4092-bb87-49b6-9266-706c6f794ed4">
       <ID>Symbol</ID>
       <Name>Symbol</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="0507f70e-9ee4-4497-926c-b25d2d89256c">
+        <KeyColumn dwd:design-time-name="2c6ea80d-6d68-49f9-a505-8c1845367546">
           <DataType>WChar</DataType>
           <DataSize>10</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="d8086d85-1cd6-42cc-a64c-a32a2dfa53af">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="74578e20-e1e9-4d2d-b63d-2d05718b8b6c">
             <TableID>dbo_DimCurrency</TableID>
             <ColumnID>symbol</ColumnID>
           </Source>

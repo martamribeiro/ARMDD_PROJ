@@ -24,6 +24,10 @@
       <FullPath>Dim Product.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Dim Date.dim</Name>
+      <FullPath>Dim Date.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Dim Customer.dim</Name>
       <FullPath>Dim Customer.dim</FullPath>
     </ProjectItem>

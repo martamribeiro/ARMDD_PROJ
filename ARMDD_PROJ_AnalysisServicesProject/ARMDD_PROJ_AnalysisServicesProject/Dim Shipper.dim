@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4228fec7-6930-4ba0-a5fe-3553721f8e05" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="42ebdfd7-0a22-448a-983b-70af1316180a" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Dim Shipper</ID>
   <Name>Dim Shipper</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4224" scrolltop="-3958" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="11557" y="11303" backcolor="16119285" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4224" scrolltop="-2413" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="11557" y="8213" backcolor="16119285" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
             </font>
@@ -51,7 +51,7 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>-3958</Value>
+      <Value>-2413</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -68,41 +68,41 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="9151fa9b-05b3-49d0-935a-58a51c795297">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="8841067d-1ef9-44f2-a14a-1cae32cda35e">
     <DataSourceViewID>ARMDD PROJ Data Mart</DataSourceViewID>
   </Source>
   <UnknownMember>Visible</UnknownMember>
-  <ErrorConfiguration dwd:design-time-name="6342d583-4b37-449d-bc3d-02530ac4bc40">
+  <ErrorConfiguration dwd:design-time-name="60043f8b-e668-4526-8f5b-bee9bd7fba31">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="e6617ee7-9e4a-4bf9-a4fd-872320e6444e">
+    <Attribute dwd:design-time-name="673e451a-b5e1-46b9-8850-a59439384e13">
       <ID>Shipper Key</ID>
       <Name>Shipper Key</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="98421d25-dfc5-45cf-bac5-9fa97b3454d4">
+        <KeyColumn dwd:design-time-name="7ef68307-6fb8-439a-88f9-ee0fa5fff474">
           <DataType>Integer</DataType>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="dd86159b-4091-42d4-a7cd-2ddf1d373cab">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="97ec4295-7b97-4dcb-b88e-6d43219a0fdc">
             <TableID>dbo_DimShipper</TableID>
             <ColumnID>shipperKey</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="cb0902ee-ba76-4588-bb98-80a4f747e04b">
+        <AttributeRelationship dwd:design-time-name="43f8a5be-3f96-4e6f-9213-13b9ca49000b">
           <AttributeID>Shipper ID</AttributeID>
           <Name>Shipper ID</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="c3667315-d6fb-457b-81e9-3cc2cf415d00">
+        <AttributeRelationship dwd:design-time-name="acb4b51c-78b5-469a-ae98-e863ccb3c16f">
           <AttributeID>Company Name</AttributeID>
           <Name>Company Name</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="41b84aa8-198f-41ee-a4a9-d9a468261282">
+        <AttributeRelationship dwd:design-time-name="6bf87d7a-de5e-47a8-9b89-d94dc1e81b53">
           <AttributeID>Phone</AttributeID>
           <Name>Phone</Name>
         </AttributeRelationship>
@@ -111,13 +111,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="275fb7d5-0d46-4484-8977-480a10f4c802">
+    <Attribute dwd:design-time-name="db4c147f-c361-47b3-876a-79365a2a9c86">
       <ID>Shipper ID</ID>
       <Name>Shipper ID</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="507dd6b5-5019-4852-b0a0-8401fbf6ff2d">
+        <KeyColumn dwd:design-time-name="0a2a9b61-753a-4e00-9ff3-ab7169ae3247">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="01504b35-4aa1-4087-ae77-287688a9c3b5">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7d347889-7848-4234-ac97-39979c1ca9ad">
             <TableID>dbo_DimShipper</TableID>
             <ColumnID>shipperID</ColumnID>
           </Source>
@@ -126,14 +126,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="551791fb-99b9-4cdf-8394-35516d13a14c">
+    <Attribute dwd:design-time-name="e29bcb23-91a2-4189-a492-dd1ba0ece73c">
       <ID>Company Name</ID>
       <Name>Company Name</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="feb85785-e22b-4b46-8147-3d697a349bad">
+        <KeyColumn dwd:design-time-name="74a87f6d-bb8d-420c-b118-2d6cf085dc19">
           <DataType>WChar</DataType>
           <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="52ac4048-66ff-4e62-8209-992c073a7bfc">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="910c4771-2908-426d-bd63-7ab072054053">
             <TableID>dbo_DimShipper</TableID>
             <ColumnID>companyName</ColumnID>
           </Source>
@@ -142,14 +142,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="dd22e425-2797-4e6f-9ea7-9716ea411c20">
+    <Attribute dwd:design-time-name="022321f3-f0d1-4ba8-b664-e5c00c6c07b3">
       <ID>Phone</ID>
       <Name>Phone</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="85d7c5b3-6dd4-4469-ae08-1a4f0838c785">
+        <KeyColumn dwd:design-time-name="9e2d189d-06e0-4c2c-b169-eeb5e7566482">
           <DataType>WChar</DataType>
           <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="7b122624-4396-43c1-97c1-9cce5d56b1aa">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9d8461a4-a2c5-4ad6-a4d3-4eff81c0e20c">
             <TableID>dbo_DimShipper</TableID>
             <ColumnID>phone</ColumnID>
           </Source>

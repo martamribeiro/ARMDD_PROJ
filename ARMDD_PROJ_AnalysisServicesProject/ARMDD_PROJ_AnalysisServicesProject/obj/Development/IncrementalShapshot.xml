@@ -19,70 +19,77 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>VeLwLB1I/EkkcJxA7KOjL60Q74s=06/01/2025 19:31:2106/01/2025 19:31:21</TimeStamp>
+        <TimeStamp>/0tvzH0MS7/pvYUuah11CFmHGBs=07/01/2025 23:14:0407/01/2025 23:14:04</TimeStamp>
         <ID>
           <String>ARMDD PROJ Data Mart</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>N8s99NRmyBxtB9G8aj9nqrG3pLI=07/01/2025 22:48:5407/01/2025 22:48:53</TimeStamp>
+        <TimeStamp>w8IhRIL0V2C8SfXQ8KlxMvK2dQY=07/01/2025 23:37:2307/01/2025 23:15:08</TimeStamp>
         <ID>
           <String>ARMDD PROJ Data Mart</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>vHvo8JytwfVyfJcA+jFZGGnwerg=07/01/2025 23:04:5407/01/2025 22:50:45</TimeStamp>
+        <TimeStamp>Xlg4ckDpFCKc3PmfkSreDUDkhio=07/01/2025 23:45:0907/01/2025 23:27:26</TimeStamp>
+        <ID>
+          <String>Dim Product</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>6T8sGrksVNwc2xjcTOoRLwksA0E=07/01/2025 23:45:0907/01/2025 23:27:26</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>/bcUaCGqBqAe5zeam3u/KvDf0hI=07/01/2025 23:45:0907/01/2025 23:27:26</TimeStamp>
         <ID>
           <String>Dim Customer</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>3DutQeFNrnQnlNLlV089lOrjGRg=07/01/2025 23:04:5407/01/2025 22:50:45</TimeStamp>
+        <TimeStamp>c4hRe+ocjNTPVwzBqrtnvTmWJV4=07/01/2025 23:45:0907/01/2025 23:27:27</TimeStamp>
         <ID>
           <String>Dim Employee</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>q3zTiJPvW5SOPt7ZbLvg/2IW+zk=07/01/2025 23:04:5407/01/2025 22:50:45</TimeStamp>
+        <TimeStamp>BHA8ED7hrPg4i36eXt1lmPfpDsQ=07/01/2025 23:45:0907/01/2025 23:27:27</TimeStamp>
         <ID>
           <String>Dim Ship To</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>beKKGZBe+emmA+VmiFGRV90Wie4=07/01/2025 23:04:5407/01/2025 22:50:45</TimeStamp>
+        <TimeStamp>KWS87mE3LSz8hJrvV31w11LKKwM=07/01/2025 23:45:0907/01/2025 23:27:27</TimeStamp>
         <ID>
           <String>Dim Currency</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>deRMK1Qq1VoHywn2kYEvvGKvTmw=07/01/2025 23:04:5407/01/2025 22:50:46</TimeStamp>
+        <TimeStamp>p1M+cixbr3gXB0Zi0kewA/RINJo=07/01/2025 23:45:0907/01/2025 23:27:27</TimeStamp>
         <ID>
           <String>Dim Shipper</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>D9ur0igyo6r90nM25iSSOgIz/40=07/01/2025 23:04:5407/01/2025 22:50:46</TimeStamp>
+        <TimeStamp>+lh4QlM/AbJQpvSgbSaBerjNYQ0=07/01/2025 23:45:0807/01/2025 23:27:27</TimeStamp>
         <ID>
           <String>Dim Source</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>C2xih+EOhgPt0/mmzNZ9a1trRp0=07/01/2025 23:04:5407/01/2025 22:50:45</TimeStamp>
-        <ID>
-          <String>Dim Product</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>inb3BgmPkoM/VPDlECiOygzCsOc=07/01/2025 23:04:5407/01/2025 22:50:45Qz/LyQ5liQMP7YCI0gMefq7u72M=07/01/2025 22:50:4607/01/2025 22:50:45</TimeStamp>
+        <TimeStamp>norr9ClObmLsQ3NWwGnuI0cp4ww=07/01/2025 23:45:0907/01/2025 23:27:26K4HMWWNJK+sr9SM7D+7TUtng7ok=07/01/2025 23:27:2707/01/2025 23:27:26</TimeStamp>
         <ID>
           <String>ARMDD PROJ Data Mart</String>
         </ID>
@@ -99,5 +106,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>false</ProcessingComplete>
-  <LastDeployed>2025-01-07T23:05:00.203333Z</LastDeployed>
+  <LastDeployed>2025-01-07T23:45:14.466667Z</LastDeployed>
 </DeploymentSnapshot>
