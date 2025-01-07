@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="283"
-  DTS:VersionGUID="{15B8C5BC-4EC1-41B4-BED0-A1C95593F912}">
+  DTS:VersionBuild="284"
+  DTS:VersionGUID="{541EF3A3-004B-4C9B-9403-524FE71613D9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40918,6 +40918,7 @@ where [refTable].[RegionID] = ?</property>
     <DTS:Executable
       DTS:refId="Package\Load Factual"
       DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DelayValidation="True"
       DTS:Description="Sequence Container"
       DTS:DTSID="{73BCF438-B0BA-48D5-81CD-20AEBD12E968}"
       DTS:ExecutableType="STOCK:SEQUENCE"
