@@ -11,8 +11,8 @@
   DTS:LocaleID="2070"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="205"
-  DTS:VersionGUID="{35D56011-7BDA-4D36-82A8-7401094A7044}">
+  DTS:VersionBuild="208"
+  DTS:VersionGUID="{60AC52DC-F268-499E-B863-9B1269E79FF1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1025,7 +1025,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Create Data Mart Database"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1169,7 +1169,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute DM Script"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3401,13 +3401,13 @@ where [refTable].[CityID] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[CountryCodes_UK]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[CountryCodes]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[CountryCodes_UK]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[CountryCodes]) [refTable]
 where [refTable].[CountryCode] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -3561,13 +3561,13 @@ where [refTable].[CountryCode] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[CountryCodes_UK]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[CountryCodes]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[CountryCodes_UK]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[CountryCodes]) [refTable]
 where [refTable].[CountryName] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -7173,34 +7173,34 @@ where [refTable].[TitleID] = ?</property>
                   startId="Package\Load Business Dimensions\Load DimCustomer\Slowly Changing Dimension UK.Outputs[Historical Attribute Inserts Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output5]"
-                  endId="Package\Load Business Dimensions\Load DimCustomer\Lookup City.Inputs[Lookup Input]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\Lookup Title.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup Title.Outputs[Lookup Match Output]" />
+                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup Country.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output4]"
-                  endId="Package\Load Business Dimensions\Load DimCustomer\Lookup CountryCode.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription USA.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output3]"
-                  endId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription UK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup City.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output1]"
-                  endId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes USA.Inputs[Data Conversion Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup CountryCode.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes UK.Inputs[Data Conversion Input]"
                   name="Lookup Match Output"
                   startId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription UK.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output2]"
-                  endId="Package\Load Business Dimensions\Load DimCustomer\Lookup Title.Inputs[Lookup Input]"
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output3]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\Convert Attributes USA.Inputs[Data Conversion Input]"
                   name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup Country.Outputs[Lookup Match Output]" />
+                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup CountryCode.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output1]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\Lookup CountryCode.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription USA.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\Lookup City.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup Title.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output2]"
+                  endId="Package\Load Business Dimensions\Load DimCustomer\Lookup RegionDescription UK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimCustomer\Lookup City.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimCustomer.Paths[New Output]"
                   endId="Package\Load Business Dimensions\Load DimCustomer\Union All.Inputs[Union All Input 1]"
@@ -7250,6 +7250,7 @@ where [refTable].[TitleID] = ?</property>
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{25E4CC22-2884-466F-9B5F-E928CA809568}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -9930,7 +9931,7 @@ where [refTable].[FullDate] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Load Business Dimensions\Load DimEmployee\1155:invalid};</property>
+                      name="ParameterMap">#{Package\Load Business Dimensions\Load DimEmployee\1149:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10087,7 +10088,7 @@ where [refTable].[FullDate] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Load Business Dimensions\Load DimEmployee\1156:invalid};</property>
+                      name="ParameterMap">#{Package\Load Business Dimensions\Load DimEmployee\1150:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -14667,34 +14668,34 @@ where [refTable].[TitleID] = ?</property>
                   startId="Package\Load Business Dimensions\Load DimEmployee\Convert Attributes UK.Outputs[Data Conversion Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output5]"
-                  endId="Package\Load Business Dimensions\Load DimEmployee\Insert UK Into DimEmployee.Inputs[OLE DB Destination Input]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Insert USA Into DimEmployee.Inputs[OLE DB Destination Input]"
                   name="Derived Column Output"
-                  startId="Package\Load Business Dimensions\Load DimEmployee\Set New Record Effective Date UK.Outputs[Derived Column Output]" />
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Set New Record Effective Date USA.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output3]"
-                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA.Inputs[Lookup Input]"
-                  name="Derived Column Output"
-                  startId="Package\Load Business Dimensions\Load DimEmployee\Transform Name USA.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output4]"
-                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup Title.Inputs[Lookup Input]"
-                  name="Derived Column Output"
-                  startId="Package\Load Business Dimensions\Load DimEmployee\Transform Name UK.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output1]"
                   endId="Package\Load Business Dimensions\Load DimEmployee\Expire Old Record UK.Inputs[OLE DB Command Input]"
                   name="Derived Column Output"
                   startId="Package\Load Business Dimensions\Load DimEmployee\Set Old Record Expired Date UK.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output]"
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output4]"
                   endId="Package\Load Business Dimensions\Load DimEmployee\Expire Old Record USA.Inputs[OLE DB Command Input]"
                   name="Derived Column Output"
                   startId="Package\Load Business Dimensions\Load DimEmployee\Set Old Record Expired Date USA.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output2]"
-                  endId="Package\Load Business Dimensions\Load DimEmployee\Insert USA Into DimEmployee.Inputs[OLE DB Destination Input]"
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output1]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA.Inputs[Lookup Input]"
                   name="Derived Column Output"
-                  startId="Package\Load Business Dimensions\Load DimEmployee\Set New Record Effective Date USA.Outputs[Derived Column Output]" />
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Transform Name USA.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Insert UK Into DimEmployee.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Set New Record Effective Date UK.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output2]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup Title.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Transform Name UK.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Historical Attribute Inserts Output]"
                   endId="Package\Load Business Dimensions\Load DimEmployee\Set Old Record Expired Date UK.Inputs[Derived Column Input]"
@@ -14707,54 +14708,54 @@ where [refTable].[TitleID] = ?</property>
                   startId="Package\Load Business Dimensions\Load DimEmployee\Slowly Changing Dimension USA.Outputs[Historical Attribute Inserts Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output6]"
-                  endId="Package\Load Business Dimensions\Load DimEmployee\Convert Attributes USA.Inputs[Data Conversion Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output9]"
-                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup ReportToKey UK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey UK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output8]"
-                  endId="Package\Load Business Dimensions\Load DimEmployee\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup ReportToKey UK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output7]"
-                  endId="Package\Load Business Dimensions\Load DimEmployee\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup ReportToKey USA.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output5]"
-                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription UK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup City.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output2]"
-                  endId="Package\Load Business Dimensions\Load DimEmployee\Convert Attributes UK.Inputs[Data Conversion Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription UK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output3]"
                   endId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey UK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey UK.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output1]"
-                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup ReportToKey USA.Inputs[Lookup Input]"
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output9]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup City.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA.Outputs[Lookup Match Output]" />
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup Title.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output]"
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output8]"
                   endId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Load Business Dimensions\Load DimEmployee\Lookup BirthDateKey USA.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output4]"
-                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup City.Inputs[Lookup Input]"
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output7]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup ReportToKey USA.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup Title.Outputs[Lookup Match Output]" />
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey USA.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output5]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Convert Attributes UK.Inputs[Data Conversion Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription UK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output2]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Slowly Changing Dimension UK.Inputs[Slowly Changing Dimension Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup ReportToKey UK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output3]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Slowly Changing Dimension USA.Inputs[Slowly Changing Dimension Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup ReportToKey USA.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output1]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup ReportToKey UK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup HireDateKey UK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Convert Attributes USA.Inputs[Data Conversion Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription USA.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output4]"
+                  endId="Package\Load Business Dimensions\Load DimEmployee\Lookup RegionDescription UK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimEmployee\Lookup City.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimEmployee.Paths[New Output]"
                   endId="Package\Load Business Dimensions\Load DimEmployee\Union All.Inputs[Union All Input 1]"
@@ -19793,7 +19794,7 @@ where [refTable].[supplierID] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Load Business Dimensions\Load DimProduct_USA\1157:invalid};</property>
+                      name="ParameterMap">#{Package\Load Business Dimensions\Load DimProduct_USA\1151:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -26928,24 +26929,24 @@ where [refTable].[RegionID] = ?</property>
                   startId="Package\Load Business Dimensions\Load DimShipTo\Slowly Changing Dimension UK.Outputs[Historical Attribute Inserts Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output3]"
-                  endId="Package\Load Business Dimensions\Load DimShipTo\Create ShipToID.Inputs[Derived Column Input]"
+                  endId="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipRegionDescription UK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountryCode.Outputs[Lookup Match Output]" />
+                  startId="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCity.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output2]"
-                  endId="Package\Load Business Dimensions\Load DimShipTo\Convert Attributes UK.Inputs[Data Conversion Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountry.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output1]"
                   endId="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountry.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipRegionDescription UK.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output]"
-                  endId="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipRegionDescription UK.Inputs[Lookup Input]"
+                  refId="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output1]"
+                  endId="Package\Load Business Dimensions\Load DimShipTo\Convert Attributes UK.Inputs[Data Conversion Input]"
                   name="Lookup Match Output"
-                  startId="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCity.Outputs[Lookup Match Output]" />
+                  startId="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountry.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output]"
+                  endId="Package\Load Business Dimensions\Load DimShipTo\Create ShipToID.Inputs[Derived Column Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountryCode.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Load Business Dimensions\Load DimShipTo.Paths[New Output]"
                   endId="Package\Load Business Dimensions\Load DimShipTo\Union All.Inputs[Union All Input 1]"
@@ -33628,6 +33629,7 @@ where [refTable].[RegionID] = ?</property>
       DTS:refId="Package\Prepare Business Dimensions"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{4E5AACE8-0823-4DAC-832B-E1BB68ADB34B}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -33643,7 +33645,7 @@ where [refTable].[RegionID] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepare DimEmployee"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="Connection">@[$Project::ServerName]+"."+ @[$Project::DataMartDBName]</DTS:PropertyExpression>
@@ -33688,12 +33690,13 @@ where [refTable].[RegionID] = ?</property>
           DTS:refId="Package\Prepare SA Data\Prepare Employees_UK"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{0AE37BFC-D55F-4726-AD0B-8B7DD0683C23}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepare Employees_UK"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="Connection">@[$Project::ServerName]+"."+ @[$Project::StagingAreaDBName]</DTS:PropertyExpression>
@@ -33707,12 +33710,13 @@ where [refTable].[RegionID] = ?</property>
           DTS:refId="Package\Prepare SA Data\Prepare Employees_USA"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{B4333D6A-34D3-42B9-9417-C34A81B30E7B}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Prepare Employees_USA"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="Connection">@[$Project::ServerName]+"."+ @[$Project::StagingAreaDBName]</DTS:PropertyExpression>
@@ -33927,6 +33931,10 @@ where [refTable].[RegionID] = ?</property>
           Id="Package\Load Business Dimensions\Load DimCustomer"
           TopLeft="39.9714295050317,38.1999997720995" />
         <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Load Business Dimensions\Load DimEmployee"
+          TopLeft="37.6000007237705,115.805882411927" />
+        <NodeLayout
           Size="177.6,41.6"
           Id="Package\Load Business Dimensions\Load DimProduct_UK"
           TopLeft="393.142857413511,359.529411763365" />
@@ -34016,10 +34024,6 @@ where [refTable].[RegionID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168.8,41.6"
-          Id="Package\Load Business Dimensions\Load DimEmployee"
-          TopLeft="37.6000007237705,115.805882411927" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -34537,9 +34541,7 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34561,9 +34563,7 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34572,22 +34572,20 @@ where [refTable].[RegionID] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34609,9 +34607,7 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34645,9 +34641,7 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34681,9 +34675,7 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34760,78 +34752,6 @@ where [refTable].[RegionID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output]"
-          TopLeft="774.899999627471,453.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output1]"
-          TopLeft="255.899999627471,453.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output2]"
-          TopLeft="774.899999627471,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output5]"
           TopLeft="774.899999627471,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -34855,31 +34775,7 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output3]"
-          TopLeft="774.899999627471,351.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output4]"
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output1]"
           TopLeft="255.899999627471,351.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -34898,7 +34794,103 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output2]"
+          TopLeft="774.899999627471,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output5]"
+          TopLeft="774.899999627471,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output3]"
+          TopLeft="255.899999627471,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimCustomer.Paths[Lookup Match Output4]"
+          TopLeft="774.899999627471,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -34993,9 +34985,7 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35017,9 +35007,7 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35041,9 +35029,7 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35065,9 +35051,7 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35089,9 +35073,7 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35113,9 +35095,7 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35186,7 +35166,7 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-26.4339062500001,25.4689331770222,157.0678125,11.6630859375"
+              BoundingBox="-26.43390625,25.4689331770222,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -35401,17 +35381,17 @@ where [refTable].[RegionID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[CountryCodes_UK]</Value>
+          type="q3:string">[dbo].[CountryCodes]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -35460,17 +35440,17 @@ where [refTable].[RegionID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[CountryCodes_UK]</Value>
+          type="q3:string">[dbo].[CountryCodes]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -35741,7 +35721,9 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35763,7 +35745,9 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35785,7 +35769,9 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35807,7 +35793,9 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35841,7 +35829,9 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35875,7 +35865,9 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -35952,126 +35944,6 @@ where [refTable].[RegionID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output1]"
-          TopLeft="765.699999761582,758.299999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output2]"
-          TopLeft="256.699999761581,453.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output3]"
-          TopLeft="256.699999761582,656.699999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output]"
-          TopLeft="765.699999761581,656.699999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output4]"
-          TopLeft="256.699999761581,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output9]"
           TopLeft="256.699999761582,758.299999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -36095,8 +35967,8 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output6]"
-          TopLeft="765.699999761581,453.5">
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output2]"
+          TopLeft="256.699999761582,859.899999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -36119,31 +35991,7 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output5]"
-          TopLeft="256.699999761581,351.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output7]"
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output3]"
           TopLeft="765.699999761581,859.899999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -36167,8 +36015,152 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output]"
+          TopLeft="765.699999761581,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output4]"
+          TopLeft="256.699999761581,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output9]"
+          TopLeft="256.699999761581,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output6]"
+          TopLeft="256.699999761582,656.699999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output5]"
+          TopLeft="256.699999761581,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output7]"
+          TopLeft="765.699999761582,758.299999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Lookup Match Output8]"
-          TopLeft="256.699999761582,859.899999999999">
+          TopLeft="765.699999761581,656.699999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -36264,6 +36256,126 @@ where [refTable].[RegionID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output]"
+          TopLeft="250.800000290573,1366.9000000149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.9999999552965"
+              Start="0,0"
+              End="0,55.4999999552965">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.4999999552965" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output2]"
+          TopLeft="256.699999761581,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output1]"
+          TopLeft="765.699999761581,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output5]"
+          TopLeft="765.000000290573,1367.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.9999999701977"
+              Start="0,0"
+              End="0,54.4999999701977">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.4999999701977" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output3]"
+          TopLeft="113.000000007451,1064.0999999851">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.0000000149012"
+              Start="0,0"
+              End="0,51.5000000149012">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5000000149012" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output4]"
           TopLeft="622.900000461936,1063.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -36293,117 +36405,9 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output2]"
-          TopLeft="765.000000290573,1367.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.9999999701977"
-              Start="0,0"
-              End="0,54.4999999701977">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.4999999701977" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output1]"
-          TopLeft="113.000000007451,1064.0999999851">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.0000000149012"
-              Start="0,0"
-              End="0,51.5000000149012">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.5000000149012" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output5]"
-          TopLeft="250.800000290573,1366.9000000149">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,62.9999999552965"
-              Start="0,0"
-              End="0,55.4999999552965">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,55.4999999552965" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output3]"
-          TopLeft="765.699999761581,351.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimEmployee.Paths[Derived Column Output4]"
-          TopLeft="256.699999761581,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36425,7 +36429,9 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36447,7 +36453,9 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -38611,17 +38619,85 @@ where [refTable].[RegionID] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="196.8,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountryCode"
-          TopLeft="434.499999910593,112.700001430511" />
+          Size="205.6,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Insert USA Into DimShipTo"
+          TopLeft="420.300000312924,1023.4999999702" />
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Insert UK Into DimShipTo"
+          TopLeft="127.700000327826,1023.4999999702" />
+        <NodeLayout
+          Size="186.4,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Convert Attributes USA"
+          TopLeft="439.699999910593,315.900001430511" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\OLE DB Command 1"
+          TopLeft="291.7,718.699999970197" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Remove Duplicates"
+          TopLeft="447.99999332428,410.599998137355" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\OLE DB Command"
+          TopLeft="5.50000000000009,718.699999970197" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountry"
+          TopLeft="144.5,312.299999970197" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Derived Column 2"
+          TopLeft="303.7,617.099999970197" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Orders_USA"
+          TopLeft="465.299999910593,11.1000014305113" />
+        <NodeLayout
+          Size="244.8,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Set New Record Effective Date USA"
+          TopLeft="401.700000655651,920.899999985098" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Union All"
+          TopLeft="170.9,820.299999970197" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Derived Column"
+          TopLeft="17.5000000000001,617.099999970197" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\Load Business Dimensions\Load DimShipTo\ShipTo_UK"
           TopLeft="166.1,7.49999997019763" />
         <NodeLayout
-          Size="135.2,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Orders_USA"
-          TopLeft="465.299999910593,11.1000014305113" />
+          Size="196.8,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountryCode"
+          TopLeft="434.499999910593,112.700001430511" />
+        <NodeLayout
+          Size="230.4,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Slowly Changing Dimension USA"
+          TopLeft="411.7,515.499999970197" />
+        <NodeLayout
+          Size="239.2,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Set New Record Effective Date UK"
+          TopLeft="105.700000655651,920.899999985098" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Create ShipToID"
+          TopLeft="454.899999910593,214.300001430511" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Union All 1"
+          TopLeft="462.1,820.299999970197" />
+        <NodeLayout
+          Size="224.8,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Slowly Changing Dimension UK"
+          TopLeft="118.5,515.499999970197" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Load Business Dimensions\Load DimShipTo\Convert Attributes UK"
+          TopLeft="140.5,413.899999970197" />
         <NodeLayout
           Size="237.6,41.6"
           Id="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipRegionDescription UK"
@@ -38630,32 +38706,6 @@ where [refTable].[RegionID] = ?</property>
           Size="153.6,41.6"
           Id="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCity"
           TopLeft="154.1,109.099999970198" />
-        <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountry"
-          TopLeft="144.5,312.299999970197" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[OLE DB Source Output]"
-          TopLeft="532.899999910593,52.7000014305113">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Business Dimensions\Load DimShipTo.Paths[OLE DB Source Output1]"
           TopLeft="230.9,49.0999999701976">
@@ -38675,12 +38725,14 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output1]"
-          TopLeft="230.9,252.299999970197">
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[OLE DB Source Output]"
+          TopLeft="532.899999910593,52.7000014305113">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -38698,216 +38750,82 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output]"
-          TopLeft="230.9,150.699999970198">
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[OLE DB Command Output1]"
+          TopLeft="87.9000000000001,760.299999970197">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="124.333333333333,59.9999999999999"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="124.333333333333,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="180.8,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Convert Attributes UK"
-          TopLeft="140.5,413.899999970197" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output2]"
-          TopLeft="230.9,353.899999970197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="224.8,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Slowly Changing Dimension UK"
-          TopLeft="118.5,515.499999970197" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Data Conversion Output]"
-          TopLeft="230.9,455.499999970197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Create ShipToID"
-          TopLeft="454.899999910593,214.300001430511" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output3]"
-          TopLeft="532.899999910593,154.300001430511">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="186.4,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Convert Attributes USA"
-          TopLeft="439.699999910593,315.900001430511" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Derived Column Output1]"
-          TopLeft="532.899999910593,255.900001430511">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="230.4,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Slowly Changing Dimension USA"
-          TopLeft="411.7,515.499999970197" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Derived Column 2"
-          TopLeft="303.7,617.099999970197" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Historical Attribute Inserts Output]"
-          TopLeft="489.833333333333,557.099999970197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-104.933333333333,59.9999999999999"
-              Start="0,0"
-              End="-104.933333333333,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2482758620689" />
+                    End="0,31.5263157894736" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.2482758620689"
-                    Point2="0,24.2482758620689"
-                    Point3="-4,24.2482758620689" />
+                    Point1="0,31.5263157894736"
+                    Point2="0,35.5263157894736"
+                    Point3="4,35.5263157894736" />
                   <mssgle:LineSegment
-                    End="-100.933333333333,24.2482758620689" />
+                    End="120.333333333333,35.5263157894736" />
                   <mssgle:CubicBezierSegment
-                    Point1="-100.933333333333,24.2482758620689"
-                    Point2="-104.933333333333,24.2482758620689"
-                    Point3="-104.933333333333,28.2482758620689" />
+                    Point1="120.333333333333,35.5263157894736"
+                    Point2="124.333333333333,35.5263157894736"
+                    Point3="124.333333333333,39.5263157894736" />
                   <mssgle:LineSegment
-                    End="-104.933333333333,52.4999999999999" />
+                    End="124.333333333333,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-127.523053385417,29.2482758620689,150.1127734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\OLE DB Command 1"
-          TopLeft="291.7,718.699999970197" />
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Derived Column Output2]"
-          TopLeft="381.9,658.699999970197">
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[OLE DB Command Output]"
+          TopLeft="378.9,760.299999970197">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="127.733333333333,59.9999999999999"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="127.733333333333,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,31.560975609756" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.560975609756"
+                    Point2="0,35.560975609756"
+                    Point3="4,35.560975609756" />
+                  <mssgle:LineSegment
+                    End="123.733333333333,35.560975609756" />
+                  <mssgle:CubicBezierSegment
+                    Point1="123.733333333333,35.560975609756"
+                    Point2="127.733333333333,35.560975609756"
+                    Point3="127.733333333333,39.560975609756" />
+                  <mssgle:LineSegment
+                    End="127.733333333333,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Union All 1"
-          TopLeft="462.1,820.299999970197" />
         <EdgeLayout
           Id="Package\Load Business Dimensions\Load DimShipTo.Paths[New Output1]"
           TopLeft="563.966666666667,557.099999970197">
@@ -38945,162 +38863,6 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[OLE DB Command Output]"
-          TopLeft="378.9,760.299999970197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="127.733333333333,59.9999999999999"
-              Start="0,0"
-              End="127.733333333333,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.560975609756" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.560975609756"
-                    Point2="0,35.560975609756"
-                    Point3="4,35.560975609756" />
-                  <mssgle:LineSegment
-                    End="123.733333333333,35.560975609756" />
-                  <mssgle:CubicBezierSegment
-                    Point1="123.733333333333,35.560975609756"
-                    Point2="127.733333333333,35.560975609756"
-                    Point3="127.733333333333,39.560975609756" />
-                  <mssgle:LineSegment
-                    End="127.733333333333,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="244.8,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Set New Record Effective Date USA"
-          TopLeft="401.700000655651,920.899999985098" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Union All Output 11]"
-          TopLeft="525.500000327826,861.899999970197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.000000014901"
-              Start="0,0"
-              End="0,51.500000014901">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.500000014901" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="205.6,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Insert USA Into DimShipTo"
-          TopLeft="420.300000312924,1023.4999999702" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Derived Column Output4]"
-          TopLeft="523.600000484288,962.499999985098">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.9999999850987"
-              Start="0,0"
-              End="0,53.4999999850987">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.4999999850987" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Derived Column"
-          TopLeft="17.5000000000001,617.099999970197" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Historical Attribute Inserts Output1]"
-          TopLeft="194.766666666667,557.099999970197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-100.866666666667,59.9999999999999"
-              Start="0,0"
-              End="-100.866666666667,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2544169611307" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2544169611307"
-                    Point2="0,24.2544169611307"
-                    Point3="-4,24.2544169611307" />
-                  <mssgle:LineSegment
-                    End="-96.8666666666667,24.2544169611307" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-96.8666666666667,24.2544169611307"
-                    Point2="-100.866666666667,24.2544169611307"
-                    Point3="-100.866666666667,28.2544169611307" />
-                  <mssgle:LineSegment
-                    End="-100.866666666667,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-125.489720052083,29.2544169611307,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\OLE DB Command"
-          TopLeft="5.50000000000009,718.699999970197" />
-        <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Derived Column Output3]"
-          TopLeft="90.9000000000001,658.699999970197">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Union All"
-          TopLeft="170.9,820.299999970197" />
-        <EdgeLayout
           Id="Package\Load Business Dimensions\Load DimShipTo.Paths[New Output]"
           TopLeft="267.033333333333,557.099999970197">
           <EdgeLayout.Curve>
@@ -39137,69 +38899,269 @@ where [refTable].[RegionID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[OLE DB Command Output1]"
-          TopLeft="87.9000000000001,760.299999970197">
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output]"
+          TopLeft="532.899999910593,154.300001430511">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="124.333333333333,59.9999999999999"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="124.333333333333,52.4999999999999">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5263157894736" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5263157894736"
-                    Point2="0,35.5263157894736"
-                    Point3="4,35.5263157894736" />
-                  <mssgle:LineSegment
-                    End="120.333333333333,35.5263157894736" />
-                  <mssgle:CubicBezierSegment
-                    Point1="120.333333333333,35.5263157894736"
-                    Point2="124.333333333333,35.5263157894736"
-                    Point3="124.333333333333,39.5263157894736" />
-                  <mssgle:LineSegment
-                    End="124.333333333333,52.4999999999999" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="239.2,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Set New Record Effective Date UK"
-          TopLeft="105.700000655651,920.899999985098" />
         <EdgeLayout
-          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Union All Output 1]"
-          TopLeft="228.100000327826,861.899999970197">
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output1]"
+          TopLeft="230.9,353.899999970197">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.000000014901"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,51.500000014901">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.500000014901" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="199.2,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Insert UK Into DimShipTo"
-          TopLeft="127.700000327826,1023.4999999702" />
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output2]"
+          TopLeft="230.9,252.299999970197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Lookup Match Output3]"
+          TopLeft="230.9,150.699999970198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Historical Attribute Inserts Output1]"
+          TopLeft="194.766666666667,557.099999970197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-100.866666666667,59.9999999999999"
+              Start="0,0"
+              End="-100.866666666667,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2544169611307" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2544169611307"
+                    Point2="0,24.2544169611307"
+                    Point3="-4,24.2544169611307" />
+                  <mssgle:LineSegment
+                    End="-96.8666666666667,24.2544169611307" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-96.8666666666667,24.2544169611307"
+                    Point2="-100.866666666667,24.2544169611307"
+                    Point3="-100.866666666667,28.2544169611307" />
+                  <mssgle:LineSegment
+                    End="-100.866666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-125.489720052083,29.2544169611307,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Historical Attribute Inserts Output]"
+          TopLeft="489.833333333333,557.099999970197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-104.933333333333,59.9999999999999"
+              Start="0,0"
+              End="-104.933333333333,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2482758620689" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2482758620689"
+                    Point2="0,24.2482758620689"
+                    Point3="-4,24.2482758620689" />
+                  <mssgle:LineSegment
+                    End="-100.933333333333,24.2482758620689" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-100.933333333333,24.2482758620689"
+                    Point2="-104.933333333333,24.2482758620689"
+                    Point3="-104.933333333333,28.2482758620689" />
+                  <mssgle:LineSegment
+                    End="-104.933333333333,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-127.523053385417,29.2482758620689,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Derived Column Output4]"
+          TopLeft="523.600000484288,962.499999985098">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.9999999850987"
+              Start="0,0"
+              End="0,53.4999999850987">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.4999999850987" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Derived Column Output3]"
+          TopLeft="90.9000000000001,658.699999970197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Derived Column Output2]"
+          TopLeft="381.9,658.699999970197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Derived Column Output1]"
+          TopLeft="532.899999910593,255.900001430511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Derived Column Output]"
           TopLeft="226.300000491738,962.499999985098">
@@ -39219,13 +39181,11 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,41.6"
-          Id="Package\Load Business Dimensions\Load DimShipTo\Remove Duplicates"
-          TopLeft="447.99999332428,410.599998137355" />
         <EdgeLayout
           Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Data Conversion Output1]"
           TopLeft="532.449996617436,357.500001430511">
@@ -39245,7 +39205,81 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Data Conversion Output]"
+          TopLeft="230.9,455.499999970197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Union All Output 11]"
+          TopLeft="525.500000327826,861.899999970197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.000000014901"
+              Start="0,0"
+              End="0,51.500000014901">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.500000014901" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Business Dimensions\Load DimShipTo.Paths[Union All Output 1]"
+          TopLeft="228.100000327826,861.899999970197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.000000014901"
+              Start="0,0"
+              End="0,51.500000014901">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.500000014901" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39267,19 +39301,47 @@ where [refTable].[RegionID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountryCode">
+    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Insert USA Into DimShipTo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Insert UK Into DimShipTo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountry">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -39289,23 +39351,10 @@ where [refTable].[RegionID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Business Dimensions\Load DimShipTo\ShipTo_UK">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -39323,40 +39372,30 @@ where [refTable].[RegionID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipRegionDescription UK">
+    design-time-name="Package\Load Business Dimensions\Load DimShipTo\ShipTo_UK">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Regions_UK]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCity">
+    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountryCode">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Cities_UK]</Value>
+          type="q3:string">[dbo].[CountryCodes]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -39369,22 +39408,209 @@ where [refTable].[RegionID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCountry">
+    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Slowly Changing Dimension USA">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{D5362789-BAB0-49C7-8E78-1CAF26C52C25}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[DimShipTo]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Orders_USA.Outputs[OLE DB Source Output].Columns[ShipCity]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipCity&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Orders_USA.Outputs[OLE DB Source Output].Columns[ShipCountry]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipCountry&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Convert Attributes USA.Outputs[Data Conversion Output].Columns[ShipCountryCode_Converted]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipCountryCode&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Orders_USA.Outputs[OLE DB Source Output].Columns[ShipPostalCode]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipPostalCode&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Orders_USA.Outputs[OLE DB Source Output].Columns[ShipRegion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipRegionDescription&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Orders_USA.Outputs[OLE DB Source Output].Columns[ShipAddress]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipToAddress&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Create ShipToID.Outputs[Derived Column Output].Columns[ShipToID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipToID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Orders_USA.Outputs[OLE DB Source Output].Columns[ShipName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipToName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 3&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;EffectiveDate&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;ExpirationDate&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::ContainerStartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Slowly Changing Dimension UK">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{D5362789-BAB0-49C7-8E78-1CAF26C52C25}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[DimShipTo]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Convert Attributes UK.Outputs[Data Conversion Output].Columns[ShipCity_Converted]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipCity&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Lookup ShipCountry.Outputs[Lookup Match Output].Columns[ShipCountry]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipCountry&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Convert Attributes UK.Outputs[Data Conversion Output].Columns[ShipCountryCode_Converted]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipCountryCode&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Convert Attributes UK.Outputs[Data Conversion Output].Columns[ShipPostalCode_Converted]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipPostalCode&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Convert Attributes UK.Outputs[Data Conversion Output].Columns[ShipRegionDescription_Converted]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipRegionDescription&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Convert Attributes UK.Outputs[Data Conversion Output].Columns[ShipToAddress_Converted]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipToAddress&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;ShipTo_UK.Outputs[OLE DB Source Output].Columns[ShipToID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipToID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Convert Attributes UK.Outputs[Data Conversion Output].Columns[ShipToName_Converted]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ShipToName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;EffectiveDate&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;ExpirationDate&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::ContainerStartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipRegionDescription UK">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[CountryCodes]</Value>
+          type="q3:string">[dbo].[Regions_UK]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Lookup ShipCity">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Cities_UK]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -40249,196 +40475,6 @@ where [refTable].[RegionID] = ?</property>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Load Temporal Dimensions\Load DimDate\DimDate">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Slowly Changing Dimension UK">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionID&gt;{D5362789-BAB0-49C7-8E78-1CAF26C52C25}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[dbo].[DimShipTo]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Convert Attributes UK.Outputs[Data Conversion Output].Columns[ShipCity_Converted]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipCity&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Lookup ShipCountry.Outputs[Lookup Match Output].Columns[ShipCountry]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipCountry&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Convert Attributes UK.Outputs[Data Conversion Output].Columns[ShipCountryCode_Converted]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipCountryCode&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Convert Attributes UK.Outputs[Data Conversion Output].Columns[ShipPostalCode_Converted]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipPostalCode&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Convert Attributes UK.Outputs[Data Conversion Output].Columns[ShipRegionDescription_Converted]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipRegionDescription&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Convert Attributes UK.Outputs[Data Conversion Output].Columns[ShipToAddress_Converted]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipToAddress&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;ShipTo_UK.Outputs[OLE DB Source Output].Columns[ShipToID]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipToID&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Convert Attributes UK.Outputs[Data Conversion Output].Columns[ShipToName_Converted]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipToName&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn&gt;EffectiveDate&lt;/StartDateColumn&gt;
-  &lt;EndDateColumn&gt;ExpirationDate&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;System::ContainerStartTime&lt;/DateVariable&gt;
-  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Slowly Changing Dimension USA">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionID&gt;{D5362789-BAB0-49C7-8E78-1CAF26C52C25}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[dbo].[DimShipTo]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Orders_USA.Outputs[OLE DB Source Output].Columns[ShipCity]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipCity&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Orders_USA.Outputs[OLE DB Source Output].Columns[ShipCountry]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipCountry&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Convert Attributes USA.Outputs[Data Conversion Output].Columns[ShipCountryCode_Converted]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipCountryCode&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Orders_USA.Outputs[OLE DB Source Output].Columns[ShipPostalCode]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipPostalCode&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Orders_USA.Outputs[OLE DB Source Output].Columns[ShipRegion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipRegionDescription&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Orders_USA.Outputs[OLE DB Source Output].Columns[ShipAddress]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipToAddress&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Create ShipToID.Outputs[Derived Column Output].Columns[ShipToID]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipToID&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Orders_USA.Outputs[OLE DB Source Output].Columns[ShipName]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ShipToName&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Union All 1&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 3&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination 1&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn&gt;EffectiveDate&lt;/StartDateColumn&gt;
-  &lt;EndDateColumn&gt;ExpirationDate&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;System::ContainerStartTime&lt;/DateVariable&gt;
-  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Insert USA Into DimShipTo">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Business Dimensions\Load DimShipTo\Insert UK Into DimShipTo">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
