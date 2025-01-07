@@ -6,12 +6,60 @@
     <Name>ARMDD_PROJ_AnalysisServicesProject.database</Name>
     <FullPath>ARMDD_PROJ_AnalysisServicesProject.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>ARMDD PROJ Data Mart.cube</Name>
+      <FullPath>ARMDD PROJ Data Mart.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>ARMDD PROJ Data Mart.partitions</Name>
+          <FullPath>ARMDD PROJ Data Mart.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Dim Product.dim</Name>
+      <FullPath>Dim Product.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Customer.dim</Name>
+      <FullPath>Dim Customer.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Employee.dim</Name>
+      <FullPath>Dim Employee.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Ship To.dim</Name>
+      <FullPath>Dim Ship To.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Currency.dim</Name>
+      <FullPath>Dim Currency.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Shipper.dim</Name>
+      <FullPath>Dim Shipper.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Source.dim</Name>
+      <FullPath>Dim Source.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
   <DataSources>
     <ProjectItem>
       <Name>ARMDD PROJ Data Mart.ds</Name>
       <FullPath>ARMDD PROJ Data Mart.ds</FullPath>
     </ProjectItem>
   </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>ARMDD PROJ Data Mart.dsv</Name>
+      <FullPath>ARMDD PROJ Data Mart.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>

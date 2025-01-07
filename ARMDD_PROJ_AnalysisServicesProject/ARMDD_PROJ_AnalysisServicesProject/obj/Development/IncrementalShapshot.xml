@@ -1,0 +1,103 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>ARMDD_PROJ_AnalysisServicesProject</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>VeLwLB1I/EkkcJxA7KOjL60Q74s=06/01/2025 19:31:2106/01/2025 19:31:21</TimeStamp>
+        <ID>
+          <String>ARMDD PROJ Data Mart</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>N8s99NRmyBxtB9G8aj9nqrG3pLI=07/01/2025 22:48:5407/01/2025 22:48:53</TimeStamp>
+        <ID>
+          <String>ARMDD PROJ Data Mart</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>vHvo8JytwfVyfJcA+jFZGGnwerg=07/01/2025 23:04:5407/01/2025 22:50:45</TimeStamp>
+        <ID>
+          <String>Dim Customer</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>3DutQeFNrnQnlNLlV089lOrjGRg=07/01/2025 23:04:5407/01/2025 22:50:45</TimeStamp>
+        <ID>
+          <String>Dim Employee</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>q3zTiJPvW5SOPt7ZbLvg/2IW+zk=07/01/2025 23:04:5407/01/2025 22:50:45</TimeStamp>
+        <ID>
+          <String>Dim Ship To</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>beKKGZBe+emmA+VmiFGRV90Wie4=07/01/2025 23:04:5407/01/2025 22:50:45</TimeStamp>
+        <ID>
+          <String>Dim Currency</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>deRMK1Qq1VoHywn2kYEvvGKvTmw=07/01/2025 23:04:5407/01/2025 22:50:46</TimeStamp>
+        <ID>
+          <String>Dim Shipper</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>D9ur0igyo6r90nM25iSSOgIz/40=07/01/2025 23:04:5407/01/2025 22:50:46</TimeStamp>
+        <ID>
+          <String>Dim Source</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>C2xih+EOhgPt0/mmzNZ9a1trRp0=07/01/2025 23:04:5407/01/2025 22:50:45</TimeStamp>
+        <ID>
+          <String>Dim Product</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>inb3BgmPkoM/VPDlECiOygzCsOc=07/01/2025 23:04:5407/01/2025 22:50:45Qz/LyQ5liQMP7YCI0gMefq7u72M=07/01/2025 22:50:4607/01/2025 22:50:45</TimeStamp>
+        <ID>
+          <String>ARMDD PROJ Data Mart</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>c7JdlATLx/ExKfcmKMARli7m0+M=05/01/2025 19:38:2805/01/2025 19:38:28</TimeStamp>
+      <ID>
+        <String>ARMDD_PROJ_AnalysisServicesProject</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>false</ProcessingComplete>
+  <LastDeployed>2025-01-07T23:05:00.203333Z</LastDeployed>
+</DeploymentSnapshot>
