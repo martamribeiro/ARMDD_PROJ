@@ -17,7 +17,7 @@ BEGIN
         [RegionDescription] [varchar](50) NULL,
         [EffectiveDate] [datetime] NULL,
         [ExpirationDate] [datetime] NULL,
-        [IsCurrent] [varchar](3) NULL
+        [IsCurrent] [nvarchar](3) NULL
     )
 
     CREATE NONCLUSTERED INDEX [NonClusteredIndex-DimCustomer] ON [dbo].[DimCustomer]

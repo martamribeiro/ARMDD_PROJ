@@ -18,7 +18,7 @@ BEGIN
 		[ReportsToKey] [int] NULL,
 		[EffectiveDate] [datetime] NULL,
         [ExpirationDate] [datetime] NULL,
-        [IsCurrent] [varchar](3) NULL
+        [IsCurrent] [nvarchar](3) NULL
     )
 
     CREATE NONCLUSTERED INDEX [NonClusteredIndex-DimEmployee] ON [dbo].[DimEmployee]
