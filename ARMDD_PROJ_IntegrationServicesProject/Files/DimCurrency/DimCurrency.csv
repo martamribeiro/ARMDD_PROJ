@@ -1,3 +1,3 @@
 CurrencyCode;CurrencyName;RateToUSD;symbol;EffectiveDate;ExpirationDate;IsCurrent
-GBP;Libra esterlina britânica;0.2;£;01/01/1900 00:00;01/01/2099 00:00;1
-USD;Dolars;1;$;01/01/1900 00:00;01/01/2099 00:00;1
+GBP;Libra esterlina britânica;0.2;£;01/01/1900 00:00;01/01/2099 00:00;yes
+USD;Dolars;1;$;01/01/1900 00:00;01/01/2099 00:00;yes
