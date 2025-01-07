@@ -4,8 +4,8 @@ IF NOT EXISTS (SELECT name FROM sys.tables WHERE name = 'DimShipper')
     (
         [shipperKey] INT IDENTITY(1,1) NOT NULL PRIMARY KEY, 
         [shipperID] INT NOT NULL, 
-        [companyName] VARCHAR(40) NOT NULL, 
-        [phone] VARCHAR(24) NULL, 
+        [companyName] VARCHAR(50) NULL, 
+        [phone] VARCHAR(50) NULL, 
         [effectiveDate] DATETIME NOT NULL, 
         [expirationDate] DATETIME NULL, 
         [isCurrent] BIT NOT NULL 

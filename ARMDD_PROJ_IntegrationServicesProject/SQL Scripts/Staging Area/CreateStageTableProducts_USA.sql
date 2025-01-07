@@ -3,8 +3,8 @@ IF NOT EXISTS (SELECT name FROM sys.tables WHERE name='Products_USA')
 	(
 		[ProductID] [int],
 		[ProductName] [varchar](50),
-		[SupplierID] [varchar](50),
-		[CategoryID] [varchar](50),
+		[SupplierID] [int],
+		[CategoryID] [int],
 		[QuantityPerUnit] [varchar](50),
 		[UnitPrice] [varchar](50),
 		[UnitsInStock] [varchar](50),

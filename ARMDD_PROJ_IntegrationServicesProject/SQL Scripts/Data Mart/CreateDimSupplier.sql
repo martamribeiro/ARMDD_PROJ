@@ -4,19 +4,16 @@ BEGIN
     (
         [supplierKey] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
         [supplierID] INT NOT NULL,
-        [supplierCompanyName] VARCHAR(40) NULL,
-        [supplierContactName] VARCHAR(30) NULL,
-        [supplierContactTitle] VARCHAR(30) NULL,
-        [supplierAddress] VARCHAR(60) NULL,
-        [supplierCity] VARCHAR(20) NULL,
-        [supplierRegionDescription] VARCHAR(50) NULL,
-        [supplierPostalCode] VARCHAR(10) NULL,
-        [supplierCountryCode] CHAR(2) NULL,
-        [supplierPhone] VARCHAR(24) NULL,
-        [supplierFax] VARCHAR(24) NULL,
-        [effectiveDate] DATETIME NULL,
-        [expirationDate] DATETIME NULL,
-        [isCurrent] BIT NULL
+        [supplierCompanyName] [varchar](50) NULL,
+        [supplierContactName] [varchar](50) NULL,
+        [supplierContactTitle] [varchar](50) NULL,
+        [supplierAddress] [varchar](60) NULL,
+        [supplierCity] [varchar](50) NULL,
+        [supplierRegionDescription] [varchar](50) NULL,
+        [supplierPostalCode] [varchar](50) NULL,
+        [supplierCountryCode] [varchar](50) NULL,
+        [supplierPhone] [varchar](50) NULL,
+        [supplierFax] [varchar](50) NULL
     )
 
     CREATE NONCLUSTERED INDEX [NonClusteredIndex-DimSupplier] ON [dbo].[DimSupplier]

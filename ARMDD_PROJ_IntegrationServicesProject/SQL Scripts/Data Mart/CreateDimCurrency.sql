@@ -3,10 +3,13 @@ BEGIN
     CREATE TABLE [dbo].[DimCurrency]
     (
         [CurrencyKey] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-        [CurrencyCode] [int] NOT NULL,
-        [CurrencyName] [varchar](20) NOT NULL,
-        [RateToUSD] DECIMAL(19, 4) NOT NULL,
-        [symbol] [varchar](10) NOT NULL
+        [CurrencyCode] [varchar](20) NULL,
+        [CurrencyName] [varchar](20) NULL,
+        [RateToUSD] [varchar](20) NULL,
+        [symbol] [varchar](10) NULL,
+        [EffectiveDate] [datetime] NULL,
+        [ExpirationDate] [datetime] NULL,
+        [IsCurrent] [varchar](3) NULL
     )
 
     CREATE NONCLUSTERED INDEX [NonClusteredIndex-DimCurrency] ON [dbo].[DimCurrency]

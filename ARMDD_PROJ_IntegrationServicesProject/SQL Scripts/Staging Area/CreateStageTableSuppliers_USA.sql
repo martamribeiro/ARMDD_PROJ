@@ -7,7 +7,7 @@ IF NOT EXISTS (SELECT name FROM sys.tables WHERE name='Suppliers_USA')
 		[ContactTitle] [varchar](50),
 		[Address] [varchar](50),
 		[City] [varchar](50),
-		[RegionID] [varchar](50),
+		[RegionID] [int],
 		[PostalCode] [varchar](50),
 		[Country] [varchar](50),
 		[Phone] [varchar](50),
